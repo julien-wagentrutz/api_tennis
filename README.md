@@ -30,12 +30,17 @@ Initialiser la base de données
 $ make load-fixtures 
 ```
 
+Accès au bash 
+```sh
+$ make docker-bash 
+```
+
 ##Ressources
 
-Acces au site : [localhost:8000](https://localhost:8000)
+Accès au site : [localhost:8000](https://localhost:8000)
 
-Acces à phpmyadmin : [localhost:8080](https://localhost:8080)
+Accès à phpmyadmin : [localhost:8080](http://localhost:8080)
 
-Acces au service de mails : [localhost:8002](https://localhost:8002)
+Accès au service de mails : [localhost:8002](http://localhost:8002)
 
 
