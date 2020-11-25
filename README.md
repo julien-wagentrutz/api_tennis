@@ -1,12 +1,12 @@
-#API_Tennis
+# API_Tennis
 API pour obtenir toutes les informations sur les joueurs ATP. (Match, Rank,Points)
 
-##Dépendance
+## Dépendance
 
 * [Make](https://stat545.com/make-windows.html)
 * [Docker](https://docs.docker.com/get-docker/)
 
-##Installation 
+## Installation 
 
 Lancer sur un terminal les commandes suivantes à l'intérieur du repo
 
@@ -30,7 +30,7 @@ Initialiser la base de données
 $ make load-fixtures 
 ```
 
-##Ressources
+## Ressources
 
 Acces au site : [localhost:8000](https://localhost:8000)
 
