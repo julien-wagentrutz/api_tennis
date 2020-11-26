@@ -27,6 +27,15 @@ stop-server:
 cert-install:
 	$(SYMFONY_BIN) server:ca:install
 
+create-db:
+	$(SYMFONY) doctrine:cache:clear-metadata
+	$(SYMFONY) doctrine:database:create --if-not-exists
+	$(SYMFONY) doctrine:schema:drop --force
+	$(SYMFONY) doctrine:schema:update --force
+
+update-db:
+	$(SYMFONY) doctrine:schema:update --force
+
 load-fixtures: ## Build the DB, control the schema validity, load fixtures and check the migration status
 	$(SYMFONY) doctrine:cache:clear-metadata
 	$(SYMFONY) doctrine:database:create --if-not-exists
