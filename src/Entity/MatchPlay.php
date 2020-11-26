@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\MatchPlayRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=MatchPlayRepository::class)
@@ -14,51 +15,61 @@ class MatchPlay
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"public_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=1)
+     * @Groups({"public_read"})
      */
     private $resultat;
 
     /**
      * @ORM\Column(type="smallint")
+     * @Groups({"public_read"})
      */
     private $doubleFaults;
 
     /**
      * @ORM\Column(type="smallint")
+     * @Groups({"public_read"})
      */
     private $ace;
 
     /**
      * @ORM\Column(type="smallint")
+     * @Groups({"public_read"})
      */
     private $totalService;
 
     /**
      * @ORM\Column(type="smallint")
+     * @Groups({"public_read"})
      */
     private $totalFirstService;
 
     /**
      * @ORM\Column(type="smallint")
+     * @Groups({"public_read"})
      */
     private $firstServeWon;
 
     /**
      * @ORM\Column(type="smallint")
+     * @Groups({"public_read"})
      */
     private $secondServeWon;
 
     /**
      * @ORM\Column(type="smallint")
+     * @Groups({"public_read"})
      */
     private $totalBreakPoints;
 
     /**
      * @ORM\Column(type="smallint")
+     * @Groups({"public_read"})
      */
     private $breakPointSave;
 
@@ -71,6 +82,7 @@ class MatchPlay
     /**
      * @ORM\ManyToOne(targetEntity=MatchTennis::class, inversedBy="matchPlays")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"read_player"})
      */
     private $matchTennis;
 

@@ -6,6 +6,7 @@ use App\Repository\ContryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=ContryRepository::class)
@@ -21,31 +22,37 @@ class Country
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"public_read"})
      */
     private $fullName;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $numericCode;
 
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
+     * @Groups({"public_read"})
      */
     private $flagPath;
 
     /**
      * @ORM\Column(type="string", length=2, nullable=true)
+     * @Groups({"public_read"})
      */
     private $iso2;
 
     /**
      * @ORM\Column(type="string", length=3, nullable=true)
+     * @Groups({"public_read"})
      */
     private $iso3;
 
     /**
      * @ORM\OneToMany(targetEntity=Tourney::class, mappedBy="country")
+     * @Groups({"public_read"})
      */
     private $tourneys;
 

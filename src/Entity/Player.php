@@ -6,6 +6,7 @@ use App\Repository\PlayerRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=PlayerRepository::class)
@@ -16,86 +17,103 @@ class Player
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"public_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"public_read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"public_read"})
      */
     private $lastName;
 
     /**
      * @ORM\Column(type="date", nullable=true)
+     * @Groups({"public_read"})
      */
     private $birthDate;
 
     /**
      * @ORM\Column(type="date", nullable=true)
+     * @Groups({"public_read"})
      */
     private $turnedProDate;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $weight;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $weightKg;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $heightFt;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $heightM;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"public_read"})
      */
     private $birthPlace;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"public_read"})
      */
     private $residencePlace;
 
     /**
      * @ORM\Column(type="string", length=1, nullable=true)
+     * @Groups({"public_read"})
      */
     private $playHand;
 
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
+     * @Groups({"public_read"})
      */
     private $imgPath;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"public_read"})
      */
     private $coach;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     * @Groups({"public_read"})
      */
     private $backHand;
 
     /**
      * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="players")
+     * @Groups({"read_player"})
      */
     private $country;
 
     /**
      * @ORM\OneToMany(targetEntity=MatchPlay::class, mappedBy="player")
+     * @Groups({"read_player"})
      */
     private $matchPlays;
 

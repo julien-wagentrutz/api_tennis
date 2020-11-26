@@ -6,6 +6,7 @@ use App\Repository\MatchTennisRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=MatchTennisRepository::class)
@@ -16,61 +17,73 @@ class MatchTennis
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"public_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Groups({"public_read"})
      */
     private $typeMatch;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $matchTime;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"public_read"})
      */
     private $matchDate;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $player1RankDuringMatch;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $player2RankDuringMatch;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $player1_2RankDuringMatch;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $player2_2RankDuringMatch;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $player1PointDuringMatch;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $player2PointDuringMatch;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $player1_2PointDuringMatch;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $player2_2PointDuringMatch;
 

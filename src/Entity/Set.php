@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\SetRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=SetRepository::class)
@@ -15,21 +16,25 @@ class Set
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"public_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $player1Score;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $player2Score;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"public_read"})
      */
     private $timebreak;
 

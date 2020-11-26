@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\TourneyRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=TourneyRepository::class)
@@ -14,31 +15,37 @@ class Tourney
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"public_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"public_read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"public_read"})
      */
     private $tourneyStartDate;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"public_read"})
      */
     private $tourneyEndDate;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     * @Groups({"public_read"})
      */
     private $outdoor;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     * @Groups({"public_read"})
      */
     private $bestOf3;
 
