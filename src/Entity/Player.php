@@ -75,7 +75,7 @@ class Player
     private $playHand;
 
     /**
-     * @ORM\Column(type="blob", nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $imgPath;
 
@@ -90,7 +90,7 @@ class Player
     private $backHand;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Contry::class, inversedBy="players")
+     * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="players")
      */
     private $country;
 
@@ -241,18 +241,6 @@ class Player
         return $this;
     }
 
-    public function getImgPath()
-    {
-        return $this->imgPath;
-    }
-
-    public function setImgPath($imgPath): self
-    {
-        $this->imgPath = $imgPath;
-
-        return $this;
-    }
-
     public function getCoach(): ?string
     {
         return $this->coach;
@@ -277,12 +265,12 @@ class Player
         return $this;
     }
 
-    public function getCountry(): ?Contry
+    public function getCountry(): ?Country
     {
         return $this->country;
     }
 
-    public function setCountry(?Contry $country): self
+    public function setCountry(?Country $country): self
     {
         $this->country = $country;
 
@@ -315,6 +303,18 @@ class Player
                 $matchPlay->setPlayer(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImgPath(): ?string
+    {
+        return $this->imgPath;
+    }
+
+    public function setImgPath(?string $imgPath): self
+    {
+        $this->imgPath = $imgPath;
 
         return $this;
     }

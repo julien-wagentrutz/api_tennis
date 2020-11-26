@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=ContryRepository::class)
  */
-class Contry
+class Country
 {
 	/**
 	 * @ORM\Id
@@ -30,7 +30,7 @@ class Contry
     private $numericCode;
 
     /**
-     * @ORM\Column(type="blob", nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $flagPath;
 
@@ -80,18 +80,6 @@ class Contry
     public function setNumericCode(?int $numericCode): self
     {
         $this->numericCode = $numericCode;
-
-        return $this;
-    }
-
-    public function getFlagPath()
-    {
-        return $this->flagPath;
-    }
-
-    public function setFlagPath($flagPath): self
-    {
-        $this->flagPath = $flagPath;
 
         return $this;
     }
@@ -183,5 +171,17 @@ class Contry
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getFlagPath(): ?string
+    {
+        return $this->flagPath;
+    }
+
+    public function setFlagPath(?string $flagPath): self
+    {
+        $this->flagPath = $flagPath;
+
+        return $this;
     }
 }

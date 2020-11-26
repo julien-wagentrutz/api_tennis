@@ -43,7 +43,7 @@ class Tourney
     private $bestOf3;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Contry::class, inversedBy="tourneys")
+     * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="tourneys")
      */
     private $country;
 
@@ -127,12 +127,12 @@ class Tourney
         return $this;
     }
 
-    public function getCountry(): ?Contry
+    public function getCountry(): ?Country
     {
         return $this->country;
     }
 
-    public function setCountry(?Contry $country): self
+    public function setCountry(?Country $country): self
     {
         $this->country = $country;
 
