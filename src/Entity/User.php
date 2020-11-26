@@ -4,11 +4,13 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Uid\Uuid;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
 class User implements UserInterface
 {
@@ -40,15 +42,20 @@ class User implements UserInterface
 	*/
 	private $apiToken;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
+
 	public function __construct()
-	{
-		$this->apiToken = Uuid::v4()->toBase32();
-	}
+               	{
+               		$this->apiToken = Uuid::v4()->toBase32();
+               	}
 
 	public function getId(): ?int
-    {
-        return $this->id;
-    }
+                   {
+                       return $this->id;
+                   }
 
     public function getEmail(): ?string
     {
@@ -127,15 +134,27 @@ class User implements UserInterface
 	 * @return mixed
 	 */
 	public function getApiToken()
-	{
-		return $this->apiToken;
-	}
+               	{
+               		return $this->apiToken;
+               	}
 
 	/**
 	 * @param mixed $apiToken
 	 */
 	public function setApiToken($apiToken)
-	{
-		$this->apiToken = $apiToken;
-	}
+               	{
+               		$this->apiToken = $apiToken;
+               	}
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
+    }
 }
