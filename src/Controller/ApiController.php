@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\MatchTennis;
 use App\Entity\Player;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -63,9 +64,9 @@ class ApiController extends AbstractController
 
 		if(!empty($player))
 		{
-			$playersJson = $serializer->normalize($player, 'json',['groups' => ['public_read','read_player']]);
+			$playerJson = $serializer->normalize($player, 'json',['groups' => ['public_read','read_player']]);
 			return new JsonResponse(
-				$playersJson,
+				$playerJson,
 				200
 			);
 		}
@@ -111,4 +112,59 @@ class ApiController extends AbstractController
 		);
 	}
 
+	/**
+	 *  Match
+	 */
+
+	/**
+	 * @Route("/api/matchs", name="api_matchs", methods={"GET","HEAD"} )
+	 */
+	public function matchs(SerializerInterface $serializer): Response
+	{
+		$matchs = $this->getDoctrine()
+			->getManager()
+			->getRepository(MatchTennis::class)
+			->findAll();
+
+		if(sizeof($matchs) > 0)
+		{
+			$matchsJson = $serializer->normalize($matchs, 'json',['groups' => ['public_read','read_match']]);
+			return new JsonResponse(
+				$matchsJson,
+				200
+			);
+		}
+		return new JsonResponse(
+			"There are no resources",
+			200
+		);
+
+	}
+
+	/**
+	 * @Route("/api/matchs/{id}", name="api_matchs_id", methods={"GET","HEAD"} )
+	 */
+	public function matchsById($id,SerializerInterface $serializer): Response
+	{
+
+		$match = $this->getDoctrine()
+			->getManager()
+			->getRepository(MatchTennis::class)
+			->findOneBy(['id' => $id]);
+
+		if(!empty($match))
+		{
+			$matchJson = $serializer->normalize($match, 'json',['groups' => ['public_read','read_match']]);
+			return new JsonResponse(
+				$matchJson,
+				200
+			);
+		}
+		return new JsonResponse(
+			"There are no resources",
+			403
+		);
+	}
+
 }
+
