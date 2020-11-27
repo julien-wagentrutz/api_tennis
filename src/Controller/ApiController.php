@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\MatchTennis;
 use App\Entity\Player;
+use App\Entity\Tourney;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -157,6 +158,60 @@ class ApiController extends AbstractController
 			$matchJson = $serializer->normalize($match, 'json',['groups' => ['public_read','read_match']]);
 			return new JsonResponse(
 				$matchJson,
+				200
+			);
+		}
+		return new JsonResponse(
+			"There are no resources",
+			403
+		);
+	}
+
+	/**
+	 *  Tourney
+	 */
+
+	/**
+	 * @Route("/api/tourneys", name="api_tourneys", methods={"GET","HEAD"} )
+	 */
+	public function tourneys(SerializerInterface $serializer): Response
+	{
+		$tourneys = $this->getDoctrine()
+			->getManager()
+			->getRepository(Tourney::class)
+			->findAll();
+
+		if(sizeof($tourneys) > 0)
+		{
+			$tourneysJson = $serializer->normalize($tourneys, 'json',['groups' => ['public_read','read_match']]);
+			return new JsonResponse(
+				$tourneysJson,
+				200
+			);
+		}
+		return new JsonResponse(
+			"There are no resources",
+			200
+		);
+
+	}
+
+	/**
+	 * @Route("/api/tourneys/{id}", name="api_tourneys_id", methods={"GET","HEAD"} )
+	 */
+	public function tourneysById($id,SerializerInterface $serializer): Response
+	{
+
+		$tourney = $this->getDoctrine()
+			->getManager()
+			->getRepository(Tourney::class)
+			->findOneBy(['id' => $id]);
+
+		if(!empty($tourney))
+		{
+			$tourneyJson = $serializer->normalize($tourney, 'json',['groups' => ['public_read','read_match']]);
+			return new JsonResponse(
+				$tourneyJson,
 				200
 			);
 		}
