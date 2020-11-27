@@ -53,12 +53,25 @@ class ApiController extends AbstractController
 	/**
 	 * @Route("/api/players/{id}", name="api_players_id", methods={"GET","HEAD"} )
 	 */
-	public function playersById(): Response
+	public function playersById($id,SerializerInterface $serializer): Response
 	{
 
+		$player = $this->getDoctrine()
+			->getManager()
+			->getRepository(Player::class)
+			->findOneBy(['id' => $id]);
+
+		if(!empty($player))
+		{
+			$playersJson = $serializer->normalize($player, 'json',['groups' => ['public_read','read_player']]);
+			return new JsonResponse(
+				$playersJson,
+				200
+			);
+		}
 		return new JsonResponse(
-			null,
-			200
+			"There are no resources",
+			403
 		);
 	}
 
