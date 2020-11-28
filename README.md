@@ -32,7 +32,7 @@ $ make load-fixtures
 
 Créer la base de données
 ```sh
-$ make load-fixtures 
+$ make create-bd
 ```
 
 Mettre à jours la base de données
