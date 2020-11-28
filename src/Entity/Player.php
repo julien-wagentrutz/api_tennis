@@ -40,7 +40,7 @@ class Player
     private $birthDate;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="string", length=4 ,nullable=true)
      * @Groups({"public_read"})
      */
     private $turnedProDate;
@@ -49,7 +49,7 @@ class Player
      * @ORM\Column(type="smallint", nullable=true)
      * @Groups({"public_read"})
      */
-    private $weight;
+    private $weightLbs;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
@@ -88,7 +88,7 @@ class Player
     private $playHand;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"public_read"})
      */
     private $imgPath;
@@ -122,218 +122,276 @@ class Player
         $this->matchPlays = new ArrayCollection();
     }
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getId()
+	{
+		return $this->id;
+	}
 
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
+	/**
+	 * @param mixed $id
+	 */
+	public function setId($id): void
+	{
+		$this->id = $id;
+	}
 
-    public function setName(?string $name): self
-    {
-        $this->name = $name;
+	/**
+	 * @return mixed
+	 */
+	public function getName()
+	{
+		return $this->name;
+	}
 
-        return $this;
-    }
+	/**
+	 * @param mixed $name
+	 */
+	public function setName($name): void
+	{
+		$this->name = $name;
+	}
 
-    public function getLastName(): ?string
-    {
-        return $this->lastName;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getLastName()
+	{
+		return $this->lastName;
+	}
 
-    public function setLastName(?string $lastName): self
-    {
-        $this->lastName = $lastName;
+	/**
+	 * @param mixed $lastName
+	 */
+	public function setLastName($lastName): void
+	{
+		$this->lastName = $lastName;
+	}
 
-        return $this;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getBirthDate()
+	{
+		return $this->birthDate;
+	}
 
-    public function getBirthDate(): ?\DateTimeInterface
-    {
-        return $this->birthDate;
-    }
+	/**
+	 * @param mixed $birthDate
+	 */
+	public function setBirthDate($birthDate): void
+	{
+		$this->birthDate = $birthDate;
+	}
 
-    public function setBirthDate(?\DateTimeInterface $birthDate): self
-    {
-        $this->birthDate = $birthDate;
+	/**
+	 * @return mixed
+	 */
+	public function getTurnedProDate()
+	{
+		return $this->turnedProDate;
+	}
 
-        return $this;
-    }
+	/**
+	 * @param mixed $turnedProDate
+	 */
+	public function setTurnedProDate($turnedProDate): void
+	{
+		$this->turnedProDate = $turnedProDate;
+	}
 
-    public function getTurnedProDate(): ?\DateTimeInterface
-    {
-        return $this->turnedProDate;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getWeightLbs()
+	{
+		return $this->weightLbs;
+	}
 
-    public function setTurnedProDate(?\DateTimeInterface $turnedProDate): self
-    {
-        $this->turnedProDate = $turnedProDate;
+	/**
+	 * @param mixed $weightLbs
+	 */
+	public function setWeightLbs($weightLbs): void
+	{
+		$this->weightLbs = $weightLbs;
+	}
 
-        return $this;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getWeightKg()
+	{
+		return $this->weightKg;
+	}
 
-    public function getWeight(): ?int
-    {
-        return $this->weight;
-    }
+	/**
+	 * @param mixed $weightKg
+	 */
+	public function setWeightKg($weightKg): void
+	{
+		$this->weightKg = $weightKg;
+	}
 
-    public function setWeight(?int $weight): self
-    {
-        $this->weight = $weight;
+	/**
+	 * @return mixed
+	 */
+	public function getHeightFt()
+	{
+		return $this->heightFt;
+	}
 
-        return $this;
-    }
+	/**
+	 * @param mixed $heightFt
+	 */
+	public function setHeightFt($heightFt): void
+	{
+		$this->heightFt = $heightFt;
+	}
 
-    public function getWeightKg(): ?int
-    {
-        return $this->weightKg;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getHeightM()
+	{
+		return $this->heightM;
+	}
 
-    public function setWeightKg(?int $weightKg): self
-    {
-        $this->weightKg = $weightKg;
+	/**
+	 * @param mixed $heightM
+	 */
+	public function setHeightM($heightM): void
+	{
+		$this->heightM = $heightM;
+	}
 
-        return $this;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getBirthPlace()
+	{
+		return $this->birthPlace;
+	}
 
-    public function getHeightFt(): ?int
-    {
-        return $this->heightFt;
-    }
+	/**
+	 * @param mixed $birthPlace
+	 */
+	public function setBirthPlace($birthPlace): void
+	{
+		$this->birthPlace = $birthPlace;
+	}
 
-    public function setHeightFt(?int $heightFt): self
-    {
-        $this->heightFt = $heightFt;
+	/**
+	 * @return mixed
+	 */
+	public function getResidencePlace()
+	{
+		return $this->residencePlace;
+	}
 
-        return $this;
-    }
+	/**
+	 * @param mixed $residencePlace
+	 */
+	public function setResidencePlace($residencePlace): void
+	{
+		$this->residencePlace = $residencePlace;
+	}
 
-    public function getHeightM(): ?int
-    {
-        return $this->heightM;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getPlayHand()
+	{
+		return $this->playHand;
+	}
 
-    public function setHeightM(?int $heightM): self
-    {
-        $this->heightM = $heightM;
+	/**
+	 * @param mixed $playHand
+	 */
+	public function setPlayHand($playHand): void
+	{
+		$this->playHand = $playHand;
+	}
 
-        return $this;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getImgPath()
+	{
+		return $this->imgPath;
+	}
 
-    public function getBirthPlace(): ?string
-    {
-        return $this->birthPlace;
-    }
+	/**
+	 * @param mixed $imgPath
+	 */
+	public function setImgPath($imgPath): void
+	{
+		$this->imgPath = $imgPath;
+	}
 
-    public function setBirthPlace(?string $birthPlace): self
-    {
-        $this->birthPlace = $birthPlace;
+	/**
+	 * @return mixed
+	 */
+	public function getCoach()
+	{
+		return $this->coach;
+	}
 
-        return $this;
-    }
+	/**
+	 * @param mixed $coach
+	 */
+	public function setCoach($coach): void
+	{
+		$this->coach = $coach;
+	}
 
-    public function getResidencePlace(): ?string
-    {
-        return $this->residencePlace;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getBackHand()
+	{
+		return $this->backHand;
+	}
 
-    public function setResidencePlace(?string $residencePlace): self
-    {
-        $this->residencePlace = $residencePlace;
+	/**
+	 * @param mixed $backHand
+	 */
+	public function setBackHand($backHand): void
+	{
+		$this->backHand = $backHand;
+	}
 
-        return $this;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getCountry()
+	{
+		return $this->country;
+	}
 
-    public function getPlayHand(): ?string
-    {
-        return $this->playHand;
-    }
+	/**
+	 * @param mixed $country
+	 */
+	public function setCountry($country): void
+	{
+		$this->country = $country;
+	}
 
-    public function setPlayHand(?string $playHand): self
-    {
-        $this->playHand = $playHand;
+	/**
+	 * @return mixed
+	 */
+	public function getMatchPlays()
+	{
+		return $this->matchPlays;
+	}
 
-        return $this;
-    }
+	/**
+	 * @param mixed $matchPlays
+	 */
+	public function setMatchPlays($matchPlays): void
+	{
+		$this->matchPlays = $matchPlays;
+	}
 
-    public function getCoach(): ?string
-    {
-        return $this->coach;
-    }
-
-    public function setCoach(?string $coach): self
-    {
-        $this->coach = $coach;
-
-        return $this;
-    }
-
-    public function getBackHand(): ?bool
-    {
-        return $this->backHand;
-    }
-
-    public function setBackHand(?bool $backHand): self
-    {
-        $this->backHand = $backHand;
-
-        return $this;
-    }
-
-    public function getCountry(): ?Country
-    {
-        return $this->country;
-    }
-
-    public function setCountry(?Country $country): self
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|MatchPlay[]
-     */
-    public function getMatchPlays(): Collection
-    {
-        return $this->matchPlays;
-    }
-
-    public function addMatchPlay(MatchPlay $matchPlay): self
-    {
-        if (!$this->matchPlays->contains($matchPlay)) {
-            $this->matchPlays[] = $matchPlay;
-            $matchPlay->setPlayer($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMatchPlay(MatchPlay $matchPlay): self
-    {
-        if ($this->matchPlays->removeElement($matchPlay)) {
-            // set the owning side to null (unless already changed)
-            if ($matchPlay->getPlayer() === $this) {
-                $matchPlay->setPlayer(null);
-            }
-        }
-
-        return $this;
-    }
-
-    public function getImgPath(): ?string
-    {
-        return $this->imgPath;
-    }
-
-    public function setImgPath(?string $imgPath): self
-    {
-        $this->imgPath = $imgPath;
-
-        return $this;
-    }
 }
