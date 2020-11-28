@@ -30,6 +30,16 @@ Initialiser la base de données
 $ make load-fixtures 
 ```
 
+Créer la base de données
+```sh
+$ make create-bd
+```
+
+Mettre à jours la base de données
+```sh
+$ make update-bd
+```
+
 Accès au bash 
 ```sh
 $ make docker-bash 
