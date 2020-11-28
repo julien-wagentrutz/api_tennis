@@ -7,6 +7,7 @@ use App\Entity\Player;
 use App\Entity\Tourney;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -174,8 +175,12 @@ class ApiController extends AbstractController
 	/**
 	 * @Route("/api/tourneys", name="api_tourneys", methods={"GET","HEAD"} )
 	 */
-	public function tourneys(SerializerInterface $serializer): Response
+	public function tourneys(SerializerInterface $serializer,Request $request): Response
 	{
+		$limit = $request->query->get('limit');
+		$offset = $request->query->get('offset');
+
+
 		$tourneys = $this->getDoctrine()
 			->getManager()
 			->getRepository(Tourney::class)
@@ -201,7 +206,6 @@ class ApiController extends AbstractController
 	 */
 	public function tourneysById($id,SerializerInterface $serializer): Response
 	{
-
 		$tourney = $this->getDoctrine()
 			->getManager()
 			->getRepository(Tourney::class)

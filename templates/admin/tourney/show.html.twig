@@ -1,0 +1,11 @@
+<section>
+    <table>
+        {% for tourney in tourneys %}
+            <tr>
+                <th>{{ tourney.name }}</th>
+            </tr>
+        {% endfor %}
+    </table>
+    {{ knp_pagination_render(tourneys) }}
+
+</section>
