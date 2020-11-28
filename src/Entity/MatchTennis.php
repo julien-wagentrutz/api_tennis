@@ -89,16 +89,19 @@ class MatchTennis
 
     /**
      * @ORM\OneToMany(targetEntity=Set::class, mappedBy="matchTennis")
+     * @Groups({"read_match"})
      */
     private $sets;
 
     /**
      * @ORM\ManyToOne(targetEntity=Round::class, inversedBy="matchTennis")
+     * @Groups({"read_match"})
      */
     private $round;
 
     /**
      * @ORM\OneToMany(targetEntity=MatchPlay::class, mappedBy="matchTennis")
+     * @Groups({"read_match"})
      */
     private $matchPlays;
 

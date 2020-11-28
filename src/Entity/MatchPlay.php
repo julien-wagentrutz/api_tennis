@@ -76,6 +76,7 @@ class MatchPlay
     /**
      * @ORM\ManyToOne(targetEntity=Player::class, inversedBy="matchPlays")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"read_match"})
      */
     private $player;
 
