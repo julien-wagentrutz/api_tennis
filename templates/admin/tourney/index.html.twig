@@ -1,0 +1,14 @@
+<section>
+    <table>
+
+
+
+        {% for tourney in tourneys %}
+            <tr>
+                <th><a href="{{ path('admin_tourneys_show',{id:tourney.id}) }}">{{ tourney.name }}</a></th>
+            </tr>
+        {% endfor %}
+    </table>
+    {{ knp_pagination_render(tourneys) }}
+
+</section>

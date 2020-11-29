@@ -3,6 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Tourney;
+use App\Form\TourneyType;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -35,7 +38,7 @@ class AdminController extends AbstractController
 	/**
 	 * @Route("/admin/tourneys", name="admin_tourneys", methods="GET")
 	 */
-	public function adminShowtourneys(PaginatorInterface $paginator, Request $request): Response
+	public function adminTourneys(PaginatorInterface $paginator, Request $request): Response
 	{
 		$datas = $this->getDoctrine()
 			->getManager()
@@ -48,8 +51,43 @@ class AdminController extends AbstractController
 			20
 		);
 
-		return $this->render('admin/index.html.twig', [
+		return $this->render('admin/tourney/index.html.twig', [
 			'tourneys' => $tourneys,
+		]);
+	}
+
+	/**
+	 * @Route("/admin/tourneys/new", name="admin_tourneys_new", methods={"GET","POST"})
+	 */
+	public function adminNewTourneys(Request $request, EntityManagerInterface $em): Response
+	{
+		$tourney = new Tourney();
+		$form = $this->createForm(TourneyType::class, $tourney);
+
+		if ($request->isMethod('POST')) {
+			$form->submit($request->request->get($form->getName()));
+
+			if ($form->isSubmitted() && $form->isValid()) {
+				$em->persist($tourney);
+				$em->flush();
+				return $this->redirectToRoute('admin_tourneys');
+			}
+		}
+
+		return $this->render('admin/tourney/new.html.twig', [
+			'form' => $form->createView(),
+		]);
+	}
+
+	/**
+	 * @Route("/admin/tourneys/{id}", name="admin_tourneys_show", methods={"GET","POST"})
+	 */
+	public function adminShowTourney(Request $request, EntityManagerInterface $em, $id): Response
+	{
+		$tourney = $em->getRepository(Tourney::class)->findBy(['id' =>$id]);
+
+		return $this->render('admin/tourney/show.html.twig', [
+			'tourney' => $tourney,
 		]);
 	}
 }

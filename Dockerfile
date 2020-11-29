@@ -18,3 +18,7 @@ RUN \
     && docker-php-ext-install pdo_mysql
 
 WORKDIR /var/www/public
+
+EXPOSE 8000
+
+CMD symfony serve --allow-http --no-tls --port = 8000
