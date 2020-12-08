@@ -61,10 +61,16 @@ class Country
      */
     private $players;
 
+    /**
+     * @ORM\OneToMany(targetEntity=TourneyPlay::class, mappedBy="country")
+     */
+    private $tourneyPlays;
+
     public function __construct()
     {
         $this->tourneys = new ArrayCollection();
         $this->players = new ArrayCollection();
+        $this->tourneyPlays = new ArrayCollection();
     }
 
     public function getFullName(): ?string
@@ -188,6 +194,36 @@ class Country
     public function setFlagPath(?string $flagPath): self
     {
         $this->flagPath = $flagPath;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|TourneyPlay[]
+     */
+    public function getTourneyPlays(): Collection
+    {
+        return $this->tourneyPlays;
+    }
+
+    public function addTourneyPlay(TourneyPlay $tourneyPlay): self
+    {
+        if (!$this->tourneyPlays->contains($tourneyPlay)) {
+            $this->tourneyPlays[] = $tourneyPlay;
+            $tourneyPlay->setContry($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTourneyPlay(TourneyPlay $tourneyPlay): self
+    {
+        if ($this->tourneyPlays->removeElement($tourneyPlay)) {
+            // set the owning side to null (unless already changed)
+            if ($tourneyPlay->getContry() === $this) {
+                $tourneyPlay->setContry(null);
+            }
+        }
 
         return $this;
     }

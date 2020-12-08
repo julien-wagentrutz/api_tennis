@@ -31,12 +31,28 @@ class ApiController extends AbstractController
 	/**
 	 * @Route("/api/players", name="api_players", methods={"GET","HEAD"} )
 	 */
-	public function players(SerializerInterface $serializer): Response
+	public function players(SerializerInterface $serializer, Request $request): Response
 	{
+		$orderBy = 'id';
+		$limit= null;
+		$offset= 0;
+		$desc= false;
+
+		if(!empty($request->query->get('limit'))) {$limit = $request->query->get('limit');}
+		if(!empty($request->query->get('orderBy'))) {$orderBy = $request->query->get('orderBy');}
+		if(!empty($request->query->get('offset'))) {$offset = $request->query->get('offset');}
+		if(!empty($request->query->get('desc'))) {$desc = $request->query->get('desc');}
+		$param = array(
+			"orderBy" => $orderBy,
+			"limit" => $limit,
+			"offset" => $offset,
+			"desc" => $desc
+		);
+
 		$players = $this->getDoctrine()
 					->getManager()
 					->getRepository(Player::class)
-					->findAll();
+					->findByWithParam($param);
 
 		if(sizeof($players) > 0)
 		{

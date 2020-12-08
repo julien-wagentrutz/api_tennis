@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TourneyRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -26,159 +28,130 @@ class Tourney
     private $name;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
-     * @Groups({"public_read"})
-     */
-    private $tourneyStartDate;
-
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     * @Groups({"public_read"})
-     */
-    private $tourneyEndDate;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     * @Groups({"public_read"})
-     */
-    private $outdoor;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     * @Groups({"public_read"})
-     */
-    private $bestOf3;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="tourneys")
-     */
-    private $country;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Surface::class, inversedBy="tourneys")
-     */
-    private $surface;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Draw::class, inversedBy="tourneys")
-     */
-    private $draw;
-
-    /**
      * @ORM\ManyToOne(targetEntity=Level::class, inversedBy="tourneys")
      */
     private $level;
 
-    public function getId(): ?int
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $pathLogo;
+
+    /**
+     * @ORM\OneToMany(targetEntity=TourneyPlay::class, mappedBy="tourney")
+     */
+    private $tourneyPlays;
+
+    public function __construct()
     {
-        return $this->id;
+        $this->tourneyPlays = new ArrayCollection();
     }
 
-    public function getName(): ?string
+    public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->name;
+        return $this->createdAt;
     }
 
-    public function setName(?string $name): self
+    public function setCreatedAt(?\DateTimeInterface $createdAt): self
     {
-        $this->name = $name;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
-    public function getTourneyStartDate(): ?\DateTimeInterface
+    public function getPathLogo(): ?string
     {
-        return $this->tourneyStartDate;
+        return $this->pathLogo;
     }
 
-    public function setTourneyStartDate(?\DateTimeInterface $tourneyStartDate): self
+    public function setPathLogo(?string $pathLogo): self
     {
-        $this->tourneyStartDate = $tourneyStartDate;
+        $this->pathLogo = $pathLogo;
 
         return $this;
     }
 
-    public function getTourneyEndDate(): ?\DateTimeInterface
+	/**
+	 * @return mixed
+	 */
+	public function getId()
+                        	{
+                        		return $this->id;
+                        	}
+
+	/**
+	 * @param mixed $id
+	 */
+	public function setId($id): void
+                        	{
+                        		$this->id = $id;
+                        	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getName()
+                        	{
+                        		return $this->name;
+                        	}
+
+	/**
+	 * @param mixed $name
+	 */
+	public function setName($name): void
+                        	{
+                        		$this->name = $name;
+                        	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getLevel()
+                        	{
+                        		return $this->level;
+                        	}
+
+	/**
+	 * @param mixed $level
+	 */
+	public function setLevel($level): void
+                        	{
+                        		$this->level = $level;
+                        	}
+
+    /**
+     * @return Collection|TourneyPlay[]
+     */
+    public function getTourneyPlays(): Collection
     {
-        return $this->tourneyEndDate;
+        return $this->tourneyPlays;
     }
 
-    public function setTourneyEndDate(?\DateTimeInterface $tourneyEndDate): self
+    public function addTourneyPlay(TourneyPlay $tourneyPlay): self
     {
-        $this->tourneyEndDate = $tourneyEndDate;
+        if (!$this->tourneyPlays->contains($tourneyPlay)) {
+            $this->tourneyPlays[] = $tourneyPlay;
+            $tourneyPlay->setTourney($this);
+        }
 
         return $this;
     }
 
-    public function getOutdoor(): ?bool
+    public function removeTourneyPlay(TourneyPlay $tourneyPlay): self
     {
-        return $this->outdoor;
-    }
-
-    public function setOutdoor(?bool $outdoor): self
-    {
-        $this->outdoor = $outdoor;
+        if ($this->tourneyPlays->removeElement($tourneyPlay)) {
+            // set the owning side to null (unless already changed)
+            if ($tourneyPlay->getTourney() === $this) {
+                $tourneyPlay->setTourney(null);
+            }
+        }
 
         return $this;
     }
 
-    public function getBestOf3(): ?bool
-    {
-        return $this->bestOf3;
-    }
-
-    public function setBestOf3(?bool $bestOf3): self
-    {
-        $this->bestOf3 = $bestOf3;
-
-        return $this;
-    }
-
-    public function getCountry(): ?Country
-    {
-        return $this->country;
-    }
-
-    public function setCountry(?Country $country): self
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
-    public function getSurface(): ?Surface
-    {
-        return $this->surface;
-    }
-
-    public function setSurface(?Surface $surface): self
-    {
-        $this->surface = $surface;
-
-        return $this;
-    }
-
-    public function getDraw(): ?Draw
-    {
-        return $this->draw;
-    }
-
-    public function setDraw(?Draw $draw): self
-    {
-        $this->draw = $draw;
-
-        return $this;
-    }
-
-    public function getLevel(): ?Level
-    {
-        return $this->level;
-    }
-
-    public function setLevel(?Level $level): self
-    {
-        $this->level = $level;
-
-        return $this;
-    }
 }

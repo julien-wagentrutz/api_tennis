@@ -32,9 +32,15 @@ class Round
      */
     private $matchTennis;
 
+    /**
+     * @ORM\OneToMany(targetEntity=PointRound::class, mappedBy="round")
+     */
+    private $pointRounds;
+
     public function __construct()
     {
         $this->matchTennis = new ArrayCollection();
+        $this->pointRounds = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -78,6 +84,36 @@ class Round
             // set the owning side to null (unless already changed)
             if ($matchTenni->getRound() === $this) {
                 $matchTenni->setRound(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|PointRound[]
+     */
+    public function getPointRounds(): Collection
+    {
+        return $this->pointRounds;
+    }
+
+    public function addPointRound(PointRound $pointRound): self
+    {
+        if (!$this->pointRounds->contains($pointRound)) {
+            $this->pointRounds[] = $pointRound;
+            $pointRound->setRound($this);
+        }
+
+        return $this;
+    }
+
+    public function removePointRound(PointRound $pointRound): self
+    {
+        if ($this->pointRounds->removeElement($pointRound)) {
+            // set the owning side to null (unless already changed)
+            if ($pointRound->getRound() === $this) {
+                $pointRound->setRound(null);
             }
         }
 

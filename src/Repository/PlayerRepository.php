@@ -36,15 +36,19 @@ class PlayerRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Player
+
+    public function findByWithParam($param)
     {
+		$desc = 'ASC';
+		if($param['desc']){$desc ='DESC';}
+
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
+	        ->setMaxResults($param['limit'])
+	        ->setFirstResult($param['offset'])
+	        ->orderBy('p.'.$param['orderBy'], $desc)
+	        ->getQuery()
+            ->getResult()
         ;
     }
-    */
+
 }
