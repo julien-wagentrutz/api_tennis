@@ -1,14 +1,23 @@
-<section>
-    <table>
-
-
-
-        {% for tourney in tourneys %}
-            <tr>
-                <th><a href="{{ path('admin_tourneys_show',{id:tourney.id}) }}">{{ tourney.name }}</a></th>
-            </tr>
-        {% endfor %}
-    </table>
-    {{ knp_pagination_render(tourneys) }}
-
-</section>
+{% extends '/admin/index.html.twig' %}
+{% block title %}Tournois{% endblock %}
+{% block section %}
+        <div>
+            <a href="{{ path('admin_tourneys_new') }}">Ajouter</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Catégorie</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tourney in tourneys %}
+                    <tr>
+                        <td><a href="{{ path('admin_tourneys_show', {'id': tourney.id}) }}">{{ tourney.name }}</a></td>
+                        <td>{{ tourney.level.label }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

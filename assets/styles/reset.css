@@ -1,0 +1,28 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+ul
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a
+{
+    text-decoration: none;
+    color: #000;
+}
+
+aside
+{
+    margin: 0;
+}
+
+h3
+{
+    margin: 0;
+}

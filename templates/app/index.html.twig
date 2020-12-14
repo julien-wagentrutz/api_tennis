@@ -1,20 +1,76 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AppController!{% endblock %}
-
+{% block title %}Tonny API{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('main') }}
+{% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    {{ parent() }}
+    <main>
+        <section class="section--welcome">
+            <div class="block--text">
+                <h2>API</h2>
+                <p>
+                    <span>Tonny</span> is an API for the tennis lovers.  Stay tuned  about all the tennis news with
+                    the differents <span>Tonny</span> features.
+                </p>
+                <a class="btn-action" href="">Get started</a>
+            </div>
+            <div class="block-illu">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            </div>
+        </section>
+        <section class="section--features" id="features">
+            <h2>Our features</h2>
+            <div class="section--card-featues">
+                <div class="card">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/wagentrutzjulien/Sites/api_tennis_atp/api_tennis/src/Controller/AppController.php'|file_link(0) }}">src/Controller/AppController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/wagentrutzjulien/Sites/api_tennis_atp/api_tennis/templates/app/index.html.twig'|file_link(0) }}">templates/app/index.html.twig</a></code></li>
-    </ul>
-</div>
+                </div>
+                <div class="card">
+
+                </div>
+                <div class="card">
+
+                </div>
+            </div>
+        </section>
+        <section class="section--joinUs">
+            <div>
+                <h2>Join us to keep all the tennis news</h2>
+                <p>And became a entire member of the Tonny community. Exchange and share your passion all around you ! </p>
+                <a class="btn-action-reverse" href="">Get started</a>
+            </div>
+        </section>
+        <section class="section--option" id="pricing">
+            <div class="block--text">
+                <h2>Choose the best option</h2>
+                <p>Tonny is a paid API that gives you access to a lot of live tennis data. With Tonny you can choose between 2 subscriptions: the tennis lover subscription and the tennis adict subscription.</p>
+            </div>
+            <div class="block--card">
+                <div class="card">
+                    <h3>Tennis Lover</h3>
+                    <p><span class="price">12,95$</span> <span>/month</span></p>
+                    <ul>
+                        <li>Ça c’est cool</li>
+                        <li>Ça c’est cool</li>
+                        <li>Ça c’est cool</li>
+                        <li>Ça c’est cool</li>
+                    </ul>
+                    <a class="btn-action" href="">Subscribe</a>
+                </div>
+                <div class="card">
+                    <h3>Tennis Lover</h3>
+                    <p><span class="price">12,95$</span> <span>/month</span></p>
+                    <ul>
+                        <li>Ça c’est cool</li>
+                        <li>Ça c’est cool</li>
+                        <li>Ça c’est cool</li>
+                        <li>Ça c’est cool</li>
+                    </ul>
+                    <a class="btn-action" href="">Subscribe</a>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}

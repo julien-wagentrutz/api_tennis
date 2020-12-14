@@ -1,12 +1,19 @@
 <header>
-    <div></div>
+    <h1>
+        <a href="{{ path('app') }}"><img src="{{ asset('build/images/logo.png') }}" alt="Logo Tonny"></a>
+    </h1>
     <nav>
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Features</a></li>
-            <li><a href="">Pricing</a></li>
-            <li><a href="">Login</a></li>
-            <li><a href="">Sign up</a></li>
+            <li><a {% if menu == 'home' %}class=" active "{% endif %} href="{{ path('app') }}">Home</a></li>
+            <li><a  href="#features">Features</a></li>
+            <li><a  href="#pricing">Pricing</a></li>
+            <li><a  href="">Documentation</a></li>
+            {%  if  is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <li><a class="username{% if menu == 'user' %} active{% endif %}" href="">{{ app.user.name }}</a></li>
+            {% else %}
+                <li><a {% if menu == 'login' %}class=" active "{% endif %}  href="{{ path('app_login') }}">Login</a></li>
+                <li><a class="btn-signUp" href="{{ path('app_register') }}">Sign up</a></li>
+            {% endif %}
         </ul>
     </nav>
 </header>

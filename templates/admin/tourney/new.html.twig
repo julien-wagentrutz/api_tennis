@@ -1,11 +1,16 @@
-{% extends 'base.html.twig' %}
-{% block title %}{% endblock %}
-{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% extends '/admin/index.html.twig' %}
+{% block title %}Tournois{% endblock %}
+{% block section %}
+    {{ form_start(form) }}
+        <fieldset style="width: 50%; margin: auto">
+            <legend>Ajouter un tournoi</legend>
+            {{ form_row(form.name) }}
+            {{ form_row(form.createdAt) }}
+            {{ form_row(form.pathLogo) }}
+            {{ form_row(form.level) }}
+            {{ form_row(form.Ajouter, {'attr': {'class': 'btn-signUp'}}) }}
 
-{% block body %}
-<div style="width: 50%; margin: auto">
-    {{ form(form) }}
-
-</div>
+        </fieldset>
+    {{ form_end(form) }}
 
 {% endblock %}

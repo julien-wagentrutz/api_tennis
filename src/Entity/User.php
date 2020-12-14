@@ -47,15 +47,20 @@ class User implements UserInterface
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
 	public function __construct()
-               	{
-               		$this->apiToken = Uuid::v4()->toBase32();
-               	}
+                        	{
+                        		$this->apiToken = Uuid::v4()->toBase32();
+                        	}
 
 	public function getId(): ?int
-                   {
-                       return $this->id;
-                   }
+                            {
+                                return $this->id;
+                            }
 
     public function getEmail(): ?string
     {
@@ -134,17 +139,17 @@ class User implements UserInterface
 	 * @return mixed
 	 */
 	public function getApiToken()
-               	{
-               		return $this->apiToken;
-               	}
+                        	{
+                        		return $this->apiToken;
+                        	}
 
 	/**
 	 * @param mixed $apiToken
 	 */
 	public function setApiToken($apiToken)
-               	{
-               		$this->apiToken = $apiToken;
-               	}
+                        	{
+                        		$this->apiToken = $apiToken;
+                        	}
 
     public function isVerified(): bool
     {
@@ -154,6 +159,18 @@ class User implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }

@@ -1,0 +1,64 @@
+@import "../../fonts.scss";
+
+header
+{
+    @include header;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+    padding: 2% 8%;
+    box-sizing: border-box;
+    background-color: var(--color-background);
+    h1
+    {
+        height: 100%;
+        width: 100px;
+        a
+        {
+            display: block;
+            height: 100%;
+            width: 100%;
+            img
+            {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    nav
+    {
+        ul
+        {
+            display: flex;
+            align-items: center;
+            li
+            {
+                margin-right: 54px;
+                a
+                {
+                    color: var(--color-black-50);
+                }
+                a.active
+                {
+                    color: var(--color-black-100);
+                }
+                a.active::after
+                {
+                    content: '';
+                    display: block;
+                    height: 2px;
+                    width: 100%;
+                    background-color: var(--color-orange-100);
+                    border-radius: 2px;
+                }
+            }
+            li:last-child
+            {
+                margin-right: 0;
+            }
+        }
+    }
+}

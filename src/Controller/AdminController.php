@@ -19,9 +19,10 @@ class AdminController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
-        ]);
+	    return $this->render('admin/index.html.twig', [
+		    'menu' => 'user',
+		    'aside' => 'dashboard'
+	    ]);
     }
 
 	/**
@@ -53,6 +54,8 @@ class AdminController extends AbstractController
 
 		return $this->render('admin/tourney/index.html.twig', [
 			'tourneys' => $tourneys,
+			'menu' => 'user',
+			'aside' => 'tourney'
 		]);
 	}
 
@@ -76,6 +79,8 @@ class AdminController extends AbstractController
 
 		return $this->render('admin/tourney/new.html.twig', [
 			'form' => $form->createView(),
+			'menu' => 'user',
+			'aside' => 'tourney'
 		]);
 	}
 
@@ -84,10 +89,12 @@ class AdminController extends AbstractController
 	 */
 	public function adminShowTourney(Request $request, EntityManagerInterface $em, $id): Response
 	{
-		$tourney = $em->getRepository(Tourney::class)->findBy(['id' =>$id]);
+		$tourney = $em->getRepository(Tourney::class)->findOneBy(['id' =>$id]);
 
 		return $this->render('admin/tourney/show.html.twig', [
 			'tourney' => $tourney,
+			'menu' => 'user',
+			'aside' => 'tourney'
 		]);
 	}
 }

@@ -1,8 +1,16 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Admin Tonny{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('admin') }}
+{% endblock %}
 
 {% block body %}
-    {% include '/app/includes/header.html.twig' %}
+    {{ parent() }}
     {% include '/admin/includes/aside.html.twig' %}
+    <section>
+        {% block section %}
+
+        {% endblock %}
+    </section>
 {% endblock %}

@@ -1,3 +1,13 @@
 <aside>
-
+    <div class="section--logo">
+        <a href=""></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a {% if aside == 'dashboard' %}class=" active "{% endif %} href="">Dashboard</a></li>
+            <li><a {% if aside == 'tourney' %}class=" active "{% endif %} href="{{ path('admin_tourneys') }}">Tournois</a></li>
+            <li><a {% if aside == 'player' %}class=" active "{% endif %} href="">Joueur</a></li>
+            <li><a {% if aside == 'user' %}class=" active "{% endif %} href="">Utilisateur</a></li>
+        </ul>
+    </nav>
 </aside>

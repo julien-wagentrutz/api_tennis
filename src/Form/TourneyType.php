@@ -21,25 +21,11 @@ class TourneyType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('tourneyStartDate')
-            ->add('tourneyEndDate')
-            ->add('outdoor')
-            ->add('bestOf3')
-            ->add('country',EntityType::class, [
-	            'class' => Country::class,
-	            'choice_label' => 'full_name',
-            ])
-            ->add('surface',EntityType::class, [
-	            'class' => Surface::class,
-	            'choice_label' => 'label',
-            ])
-            ->add('draw',EntityType::class, [
-	            'class' => Draw::class,
-	            'choice_label' => 'value',
-            ])
+            ->add('createdAt')
+            ->add('pathLogo')
             ->add('level',EntityType::class, [
 	            'class' => Level::class,
-	            'choice_label' => 'level',
+	            'choice_label' => 'label',
             ])
 	        ->add('Ajouter', SubmitType::class)
         ;

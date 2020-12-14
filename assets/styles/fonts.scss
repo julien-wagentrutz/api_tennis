@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'PoppinsMedium';
+    src: url('./../fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'PoppinsSemiBold';
+    src: url('./../fonts/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'PoppinsBold';
+    src: url('./../fonts/Poppins-Bold.ttf');
+}
+
+@mixin header
+{
+    font-family: PoppinsMedium;
+    font-size: 16px;
+}
+
+@mixin h2
+{
+    font-family: PoppinsMedium;
+    font-size: 32px;
+}
+
+@mixin h3
+{
+    font-family: PoppinsSemiBold;
+    font-size: 36px;
+}
+
+@mixin text
+{
+    font-family: PoppinsMedium;
+    font-size: 18px;
+}
+
+@mixin littleText
+{
+    font-family: PoppinsSemiBold;
+    font-size: 16px;
+}
+
+@mixin bigText
+{
+    font-family: PoppinsSemiBold;
+    font-size: 24px;
+}
+
+@mixin label
+{
+    font-family: PoppinsMedium;
+    font-size: 16px;
+}
+
+@mixin titleFooter
+{
+    font-family: PoppinsBold;
+    font-size: 18px;
+}
+
+@mixin buttonFont
+{
+    font-family: PoppinsBold;
+    font-size: 16px;
+}
