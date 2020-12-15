@@ -71,3 +71,6 @@ run: docker-up composer-update docker-bash
 run-server: cert-install start-server
 
 stop: stop-server docker-down
+
+cache:
+	$(SYMFONY) cache:clear
