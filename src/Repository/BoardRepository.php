@@ -19,6 +19,20 @@ class BoardRepository extends ServiceEntityRepository
         parent::__construct($registry, Board::class);
     }
 
+	public function findByWithParam($param)
+	{
+		$desc = 'ASC';
+		if($param['desc']){$desc ='DESC';}
+
+		return $this->createQueryBuilder('p')
+			->setMaxResults($param['limit'])
+			->setFirstResult($param['offset'])
+			->orderBy('p.'.$param['orderBy'], $desc)
+			->getQuery()
+			->getResult()
+			;
+	}
+
     // /**
     //  * @return Board[] Returns an array of Board objects
     //  */

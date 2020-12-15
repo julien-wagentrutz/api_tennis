@@ -47,4 +47,18 @@ class TourneyPlayRepository extends ServiceEntityRepository
         ;
     }
     */
+
+	public function findByWithParam($param)
+	{
+		$desc = 'ASC';
+		if($param['desc']){$desc ='DESC';}
+
+		return $this->createQueryBuilder('p')
+			->setMaxResults($param['limit'])
+			->setFirstResult($param['offset'])
+			->orderBy('p.'.$param['orderBy'], $desc)
+			->getQuery()
+			->getResult()
+			;
+	}
 }

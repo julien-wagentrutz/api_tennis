@@ -19,6 +19,20 @@ class TourneyRepository extends ServiceEntityRepository
         parent::__construct($registry, Tourney::class);
     }
 
+	public function findByWithParam($param)
+	{
+		$desc = 'ASC';
+		if($param['desc']){$desc ='DESC';}
+
+		return $this->createQueryBuilder('p')
+			->setMaxResults($param['limit'])
+			->setFirstResult($param['offset'])
+			->orderBy('p.'.$param['orderBy'], $desc)
+			->getQuery()
+			->getResult()
+			;
+	}
+
     // /**
     //  * @return Tourney[] Returns an array of Tourney objects
     //  */
@@ -35,5 +49,6 @@ class TourneyRepository extends ServiceEntityRepository
         ;
     }
     */
+
 
 }

@@ -19,6 +19,20 @@ class MatchTennisRepository extends ServiceEntityRepository
         parent::__construct($registry, MatchTennis::class);
     }
 
+	public function findByWithParam($param)
+	{
+		$desc = 'ASC';
+		if($param['desc']){$desc ='DESC';}
+
+		return $this->createQueryBuilder('p')
+			->setMaxResults($param['limit'])
+			->setFirstResult($param['offset'])
+			->orderBy('p.'.$param['orderBy'], $desc)
+			->getQuery()
+			->getResult()
+			;
+	}
+
     // /**
     //  * @return MatchTennis[] Returns an array of MatchTennis objects
     //  */
