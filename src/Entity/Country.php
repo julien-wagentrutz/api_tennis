@@ -52,7 +52,6 @@ class Country
 
     /**
      * @ORM\OneToMany(targetEntity=Tourney::class, mappedBy="country")
-     * @Groups({"public_read"})
      */
     private $tourneys;
 

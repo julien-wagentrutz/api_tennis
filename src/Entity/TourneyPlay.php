@@ -6,6 +6,7 @@ use App\Repository\TourneyPlayRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=TourneyPlayRepository::class)
@@ -16,62 +17,74 @@ class TourneyPlay
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"public_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $edition;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"public_read"})
      */
     private $dotation;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"public_read"})
      */
     private $startDate;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"public_read"})
      */
     private $endDate;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"public_read"})
      */
     private $outdoor;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
+     * @Groups({"public_read"})
      */
     private $surface;
 
     /**
      * @ORM\Column(type="string", length=150, nullable=true)
+     * @Groups({"public_read"})
      */
     private $city;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"public_read"})
      */
     private $place;
 
     /**
      * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="tourneyPlays")
+     * @Groups({"public_read"})
      */
     private $country;
 
     /**
      * @ORM\ManyToOne(targetEntity=Tourney::class, inversedBy="tourneyPlays")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"read_player","read_match"})
      */
     private $tourney;
 
     /**
      * @ORM\OneToMany(targetEntity=Board::class, mappedBy="tourneyPlay")
+     * @Groups({"read_tourney"})
      */
     private $boards;
 

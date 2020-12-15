@@ -6,6 +6,7 @@ use App\Repository\RankRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=RankRepository::class)
@@ -21,16 +22,19 @@ class Rank
 
     /**
      * @ORM\Column(type="date")
+     * @Groups({"public_read"})
      */
     private $date;
 
     /**
      * @ORM\Column(type="string", length=6)
+     * @Groups({"public_read"})
      */
     private $type;
 
     /**
      * @ORM\Column(type="smallint")
+     * @Groups({"public_read"})
      */
     private $points;
 

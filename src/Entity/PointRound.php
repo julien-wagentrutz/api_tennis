@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PointRoundRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=PointRoundRepository::class)
@@ -14,26 +15,31 @@ class PointRound
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"public_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $value;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Groups({"public_read"})
      */
     private $max;
 
     /**
      * @ORM\ManyToOne(targetEntity=Round::class, inversedBy="pointRounds")
+     * @Groups({"read_player"})
      */
     private $round;
 
     /**
      * @ORM\ManyToOne(targetEntity=Level::class, inversedBy="pointRounds")
+     * @Groups({"read_player","read_match","read_board"})
      */
     private $level;
 

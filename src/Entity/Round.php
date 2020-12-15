@@ -34,6 +34,7 @@ class Round
 
     /**
      * @ORM\OneToMany(targetEntity=PointRound::class, mappedBy="round")
+     * @Groups({"read_match","read_board"})
      */
     private $pointRounds;
 

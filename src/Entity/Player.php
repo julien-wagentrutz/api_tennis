@@ -107,7 +107,7 @@ class Player
 
     /**
      * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="players")
-     * @Groups({"read_player"})
+     * @Groups({"public_read"})
      */
     private $country;
 
@@ -119,6 +119,7 @@ class Player
 
     /**
      * @ORM\OneToMany(targetEntity=Rank::class, mappedBy="player")
+     * @Groups({"public_read"})
      */
     private $ranks;
 

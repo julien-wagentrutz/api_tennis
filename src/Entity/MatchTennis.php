@@ -89,21 +89,30 @@ class MatchTennis
 
     /**
      * @ORM\OneToMany(targetEntity=Set::class, mappedBy="matchTennis")
-     * @Groups({"read_match"})
+     * @Groups({"public_read"})
      */
     private $sets;
 
     /**
      * @ORM\ManyToOne(targetEntity=Round::class, inversedBy="matchTennis")
-     * @Groups({"read_match"})
+     * @Groups({"read_player","read_match","read_board"})
      */
     private $round;
 
     /**
      * @ORM\OneToMany(targetEntity=MatchPlay::class, mappedBy="matchTennis")
-     * @Groups({"read_match"})
+     * @Groups({"read_match","read_tourney","read_board"})
      */
     private $matchPlays;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Board::class, inversedBy="matchTennis")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $board;
+
+
+
 
     public function __construct()
     {
@@ -323,4 +332,17 @@ class MatchTennis
 
         return $this;
     }
+
+    public function getBoard(): ?Board
+    {
+        return $this->board;
+    }
+
+    public function setBoard(?Board $board): self
+    {
+        $this->board = $board;
+
+        return $this;
+    }
+
 }

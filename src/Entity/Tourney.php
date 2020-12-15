@@ -29,21 +29,25 @@ class Tourney
 
     /**
      * @ORM\ManyToOne(targetEntity=Level::class, inversedBy="tourneys")
+     * @Groups({"public_read"})
      */
     private $level;
 
     /**
      * @ORM\Column(type="date", nullable=true)
+     * @Groups({"public_read"})
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"public_read"})
      */
     private $pathLogo;
 
     /**
      * @ORM\OneToMany(targetEntity=TourneyPlay::class, mappedBy="tourney")
+     * @Groups({"read_tourney"})
      */
     private $tourneyPlays;
 

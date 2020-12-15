@@ -39,6 +39,7 @@ class Level
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"public_read"})
      */
     private $label;
 
