@@ -17,4 +17,15 @@ class AppController extends AbstractController
             'menu' => 'home',
         ]);
     }
+
+	/**
+	 * @Route("/doc", name="app_doc")
+	 */
+	public function documention(): Response
+	{
+		return $this->render('app/documentation/index.html.twig', [
+			'menu' => 'documentation',
+			'aside' => ''
+		]);
+	}
 }
