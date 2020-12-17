@@ -50,19 +50,30 @@
             <div class="block--text">
                 <h2>Choose the best option</h2>
                 <p>Tonny is a paid API that gives you access to a lot of live tennis data. With Tonny you can choose between 2 subscriptions: the tennis lover subscription and the tennis adict subscription.</p>
+                <div class="selector--subs">
+                    <p class="left--text select">Monthly subscription</p>
+                    <div class="button-inter">
+                        <div class="inter"></div>
+                    </div>
+                    <p class="right-text">Yearly subscription 21% Savings</p>
+                </div>
             </div>
             <div class="block--card">
                 <div class="card">
+                    <div class="baniere">
+                        <p>-21%</p>
+                    </div>
                     <h3>Tennis Lover</h3>
-                    <p><span class="price">15,90$</span> <span>/month</span></p>
+                    <p class="original"><span class="price">15,90$</span> <span>/month</span></p>
+                    <p class="year"><span class="price">150,70$</span> <span>/year</span></p>
                     <ul>
-                        <li><span>2500 </span>
+                        <li><span>7 500 </span>
                             <div>
                                 <p>requests / month</p>
                                 <p class="special">+ 0.005$ each</p>
                             </div>
                         </li>
-                        <li><span>60 </span>requests / per minutes</li>
+                        <li><span>50 </span>requests max / per minutes</li>
                         <li>Daily Matches</li>
                         <li>Basic Tournaments Matches</li>
                         <li>Tournaments</li>
@@ -72,17 +83,21 @@
                     <a class="btn-action" href="{{ path('app_register') }}">Subscribe</a>
                 </div>
                 <div class="card">
+                    <div class="baniere">
+                        <p>-21%</p>
+                    </div>
                     <h3>Tennis addict</h3>
-                    <p><span class="price">29,90$</span> <span>/month</span></p>
+                    <p class="original"><span class="price">29,90$</span> <span>/month</span></p>
+                    <p class="year"><span class="price">150,70$</span> <span>/year</span></p>
                     <ul>
-                        <li><span>25000 </span>
+                        <li><span>75 000</span>
                             <div>
                                 <p>requests / month</p>
                                 <p class="special">+ 0.005$ each</p>
                             </div>
                         </li>
-                        <li><span>120 </span>requests / per minutes</li>
-                        <li>Tennis lover detail</li>
+                        <li><span>90 </span>requests max / per minutes</li>
+                        <li class="specialAction">Everything in <span>Tennis lover</span> plus :</li>
                         <li>Detailed Tournaments Matches</li>
                         <li>Match Detail</li>
                         <li>Player Detail</li>
@@ -92,4 +107,8 @@
             </div>
         </section>
     </main>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('main') }}
 {% endblock %}
