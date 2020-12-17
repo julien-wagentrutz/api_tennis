@@ -50,10 +50,6 @@ class Country
      */
     private $iso3;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Tourney::class, mappedBy="country")
-     */
-    private $tourneys;
 
     /**
      * @ORM\OneToMany(targetEntity=Player::class, mappedBy="country")
@@ -67,7 +63,6 @@ class Country
 
     public function __construct()
     {
-        $this->tourneys = new ArrayCollection();
         $this->players = new ArrayCollection();
         $this->tourneyPlays = new ArrayCollection();
     }
@@ -116,36 +111,6 @@ class Country
     public function setIso3(?string $iso3): self
     {
         $this->iso3 = $iso3;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Tourney[]
-     */
-    public function getTourneys(): Collection
-    {
-        return $this->tourneys;
-    }
-
-    public function addTourney(Tourney $tourney): self
-    {
-        if (!$this->tourneys->contains($tourney)) {
-            $this->tourneys[] = $tourney;
-            $tourney->setCountry($this);
-        }
-
-        return $this;
-    }
-
-    public function removeTourney(Tourney $tourney): self
-    {
-        if ($this->tourneys->removeElement($tourney)) {
-            // set the owning side to null (unless already changed)
-            if ($tourney->getCountry() === $this) {
-                $tourney->setCountry(null);
-            }
-        }
 
         return $this;
     }
