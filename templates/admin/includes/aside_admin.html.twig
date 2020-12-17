@@ -1,11 +1,11 @@
 <aside class="admin--menu">
     <nav>
         <ul>
-            <li><a class="active"  data-link="#infoDoc">My account</a></li>
-            <li><a class=""  data-link="#playerDoc">Data </a></li>
+            <li><a class="active"  data-link="#infoAdmin">My account</a></li>
+            <li><a class=""  data-link="#infoData">Data </a></li>
+            <li><a class="" data-link="#infoSub">Subscription</a></li>
+            <li><a class="" data-link="#infoPayement">Payement</a></li>
             {% if  is_granted('ROLE_ADMIN') %}
-                <li><a class="" data-link="#tourneyDoc">3. Tourney</a></li>
-                <li><a class="" data-link="#boardDoc">4. Board</a></li>
                 <li><a class="" data-link="#matchDoc">5. Match</a></li>
                 <li><a class="" data-link="#tourneyPlayDoc">6. Tourney Play</a></li>
             {% endif %}
