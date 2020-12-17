@@ -9,7 +9,7 @@
             <li><a  href="#pricing">Pricing</a></li>
             <li><a class="{% if menu == 'documentation' %} active{% endif %}"  href="{{ path('app_doc') }}">Documentation</a></li>
             {%  if  is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                <li><a class="username{% if menu == 'user' %} active{% endif %}" href="">{{ app.user.name }}</a></li>
+                <li><a class="username{% if menu == 'user' %} active{% endif %}" href="{{ path('admin') }}">{{ app.user.name }}</a></li>
             {% else %}
                 <li><a {% if menu == 'login' %}class=" active "{% endif %}  href="{{ path('app_login') }}">Login</a></li>
                 <li><a class="btn-signUp" href="{{ path('app_register') }}">Sign up</a></li>

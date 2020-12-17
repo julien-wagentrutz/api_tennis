@@ -7,10 +7,56 @@
 
 {% block body %}
     {{ parent() }}
-    {% include '/admin/includes/aside.html.twig' %}
-    <section>
-        {% block section %}
-
-        {% endblock %}
-    </section>
+    <main>
+        {% include '/admin/includes/aside_admin.html.twig'%}
+        <section class="section--doc">
+            <div class="block--doc" i>
+                <div class="item--doc active" id="infoDoc">
+                    <h2 class="tittle--doc">1. Informations</h2>
+                    <div class="block--content">
+                        <p><span>API Key :</span> {{ app.user.apiToken }}</p>
+                    </div>
+                    <div class="block--content block--row">
+                        <div class="item--info">
+                            <label for="">First name</label>
+                            <input class="input" type="text" value="{{ app.user.name }}">
+                        </div>
+                    </div>
+                    <div class="block--content block--row">
+                        <div class="item--info">
+                            <label for="">Email</label>
+                            <input class="input" type="text" value="{{ app.user.email }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="item--doc active" id="playerDoc">
+                    <h2 class="tittle--doc">2. Data </h2>
+                    <div class="block--content block--row">
+                        <div class="card--info">
+                            <p class="title--card">Requests </p>
+                            <div class="card--item">
+                                <p><span>1956</span> / 2500</p>
+                            </div>
+                        </div>
+                        <div class="card--info">
+                            <p class="title--card">Rates limit</p>
+                            <div class="card--item">
+                                <p><span>60</span> / minutes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item--doc active" id="playerDoc">
+                    <h2 class="tittle--doc">3. Subscription </h2>
+                </div>
+                <div class="item--doc active" id="playerDoc">
+                    <h2 class="tittle--doc">4. Payement </h2>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('admin') }}
 {% endblock %}

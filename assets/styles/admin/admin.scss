@@ -1,5 +1,6 @@
 @import "includes/menu/aside.scss";
 @import "includes/table/table.scss";
+@import "../includes/input/input.scss";
 @import "../fonts.scss";
 
 
@@ -37,6 +38,7 @@ main
           background-color: var(--color-orange-20);
           color: var(--color-orange-100);
         }
+
         .bold
         {
           @include titleFooter;
@@ -87,4 +89,77 @@ main
       }
     }
 
+}
+
+.block--content
+{
+  padding-left: 30px;
+  padding-right: 30px;
+  p
+  {
+    span
+    {
+      @include label;
+    }
+  }
+}
+.item--doc
+{
+  .block--content:last-child
+  {
+    margin-bottom:63px;
+  }
+}
+
+.block--row
+{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 22px;
+  .item--info
+  {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .input
+    {
+      @include label;
+      margin-top: 13px;
+    }
+  }
+  .card--info
+  {
+    p
+    {
+
+    }
+    .card--item
+    {
+      @include bigText;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 258px;
+      height: 98px;
+      border: 1px solid var(--color-black-20);
+      box-shadow: var(--card-box-shadow);
+      box-sizing: border-box;
+      border-radius: var(--card-border-radius);
+      color: var(--color-black-50);
+      span
+      {
+        @include bigText;
+        color: var(--color-orange-100);
+      }
+    }
+  }
+}
+
+.item--doc:first-child
+{
+  .tittle--doc
+  {
+    border-top-left-radius: var(--card-border-radius);
+    border-top-right-radius: var(--card-border-radius);
+  }
 }

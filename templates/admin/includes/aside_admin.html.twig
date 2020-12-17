@@ -1,0 +1,14 @@
+<aside class="admin--menu">
+    <nav>
+        <ul>
+            <li><a class="active"  data-link="#infoDoc">My account</a></li>
+            {% if  is_granted('ROLE_ADMIN') %}
+            <li><a class=""  data-link="#playerDoc">2. Player </a></li>
+            <li><a class="" data-link="#tourneyDoc">3. Tourney</a></li>
+            <li><a class="" data-link="#boardDoc">4. Board</a></li>
+            <li><a class="" data-link="#matchDoc">5. Match</a></li>
+            <li><a class="" data-link="#tourneyPlayDoc">6. Tourney Play</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</aside>

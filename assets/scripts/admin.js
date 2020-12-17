@@ -24,7 +24,7 @@ window.addEventListener('scroll',(element)=>
     let body = document.body,
         html = document.documentElement;
     let height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
-    if(((height - window.scrollY))-400 < (window.innerHeight - 52) )
+    if(((height - window.scrollY))- asideMenu.clientHeight < (window.innerHeight -150) )
     {
         asideMenu.classList.add('fixe')
     }
