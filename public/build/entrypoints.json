@@ -27,6 +27,12 @@
       "css": [
         "/build/main.css"
       ]
+    },
+    "register": {
+      "js": [
+        "/build/runtime.js",
+        "/build/register.js"
+      ]
     }
   }
 }
