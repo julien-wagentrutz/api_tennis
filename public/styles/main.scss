@@ -1,0 +1,221 @@
+@font-face {
+  font-family: 'PoppinsLight';
+  src: url('../fonts/Poppins-Light.ttf');
+}
+
+@font-face {
+  font-family: 'PoppinsRegular';
+  src: url('../fonts/Poppins-Regular.ttf');
+}
+
+
+@font-face {
+  font-family: 'PoppinsMedium';
+  src: url('../fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'PoppinsSemiBold';
+  src: url('../fonts/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'PoppinsBold';
+  src: url('../fonts/Poppins-Bold.ttf');
+}
+
+
+.cardLittle{
+  display: block;
+  height: 200px;
+  width: 200px;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #F6F6F6;
+  color: #FF7963;
+  font-family: PoppinsMedium, sans-serif;
+  font-size: 16px;
+  p
+  {
+    margin: 0
+  }
+  .top_card
+  {
+    display: flex;
+    height: 117px;
+    width: 187px;
+    margin-left: 3px;
+    margin-bottom: 10px;
+    .right_info_card
+    {
+      position: relative;
+      width: 98px;
+      height: 100%;
+      .round_img
+      {
+        width: 98px;
+        height: 98px;
+        border-radius: 100%;
+        overflow: hidden;
+        img
+        {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: 0px 20px;
+          transform: scale(2);
+        }
+      }
+      .block_flag
+      {
+        position: absolute;
+        right: 10px;
+        bottom: 2px;
+        width: 33px;
+        height: 17px;
+        font-family: PoppinsRegular;
+        font-size: 8px;
+        color: #414141;
+        span
+        {
+          position: absolute;
+          bottom: 0px;
+        }
+        img
+        {
+          width: 21px;
+          height: 14.46px;
+          position: absolute;
+          right: 0;
+          border-radius: 2px;
+        }
+      }
+    }
+    .left_info_card
+    {
+      position: relative;
+      .name
+      {
+        width: 85px;
+        height: 42px;
+        font-size: 16px;
+        font-family: PoppinsRegular;
+        span
+        {
+          font-family: PoppinsSemiBold;
+        }
+      }
+      .block_rank
+      {
+        display: flex;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 60px;
+        width: 52px;
+        .label_rank
+        {
+          position: absolute;
+          left: 12px;
+          bottom: -12px;
+          display: block;
+          width: 60px;
+          height: 23.31px;
+          transform: rotate(-90deg);
+          color: #22252B;
+          font-family: PoppinsLight;
+          font-size: 11px;
+          transform-origin: left;
+        }
+        .rank
+        {
+          height: 54px;
+          position: absolute;
+          right: 0px;
+          top: 4px;
+          width: 27px;
+          display: block;
+          font-size: 36px;
+          font-family: PoppinsSemiBold;
+        }
+      }
+    }
+  }
+  .bottom_card
+  {
+    height: 63px;
+    width: 100%;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    background-color: #FFE4E0;
+    border-radius: 8px;
+    font-size: 12px;
+    .top_info
+    {
+      display: flex;
+      justify-content: space-between;
+    }
+    .bottom-info
+    {
+      display: flex;
+    }
+    p
+    {
+      color: #414141;
+      font-family: PoppinsLight;
+      span
+      {
+        font-size: 18px;
+        color: #FF7963;
+        font-family: PoppinsSemiBold;
+      }
+    }
+  }
+}
+
+
+
+.cardLittle.dark{
+  background-color: #22252B;
+  color: #FEFEFE;
+  .top_card
+  {
+    .right_info_card
+    {
+      .block_flag
+      {
+        font-family: PoppinsRegular;
+        font-size: 8px;
+        color: #414141;
+        span
+        {
+          position: absolute;
+          bottom: 0px;
+          color: #C2C2C2;
+        }
+      }
+    }
+    .left_info_card
+    {
+      .block_rank
+      {
+        .label_rank
+        {
+          color: #C2C2C2;
+        }
+      }
+    }
+  }
+  .bottom_card
+  {
+    background-color: #1A1C20;
+    p
+    {
+      color: #C2C2C2;
+      span
+      {
+        color: #FEFEFE;
+      }
+    }
+  }
+}
