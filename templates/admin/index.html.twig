@@ -14,6 +14,9 @@
                 <div class="item--doc active" id="infoAdmin">
                     <h2 class="tittle--doc">1. Informations</h2>
                     <div class="block--content">
+                        <a href="{{ path('app_logout')}}">Déconnexion</a>
+                    </div>
+                    <div class="block--content">
                         <p><span>API Key :</span> {{ app.user.apiToken }}</p>
                     </div>
                     <div class="block--content block--row">
