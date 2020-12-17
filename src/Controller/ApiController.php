@@ -91,7 +91,7 @@ class ApiController extends AbstractController
 			return new JsonResponse(
 				$playerJson,
 				200
-			);
+			) ;
 		}
 		return new JsonResponse(
 			"There are no resources",
@@ -446,7 +446,7 @@ class ApiController extends AbstractController
 
 		if(sizeof($tourneysPlay) > 0)
 		{
-			$tourneysPlayJson = $serializer->normalize($tourneysPlay, 'json',['groups' => ['public_read','read_board']]);
+			$tourneysPlayJson = $serializer->normalize($tourneysPlay, 'json',['groups' => ['public_read',"read_tourneyPlay"]]);
 			return new JsonResponse(
 				$tourneysPlayJson,
 				200
@@ -472,7 +472,7 @@ class ApiController extends AbstractController
 
 		if(!empty($tourneyPlay))
 		{
-			$tourneyPlayJson = $serializer->normalize($tourneyPlay, 'json',['groups' => ['public_read','read_board']]);
+			$tourneyPlayJson = $serializer->normalize($tourneyPlay, 'json',['groups' => ['public_read',"read_tourneyPlay"]]);
 			return new JsonResponse(
 				$tourneyPlayJson,
 				200
