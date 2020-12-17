@@ -1,22 +1,22 @@
 @font-face {
   font-family: "PoppinsLight";
-  src: url("../fonts/Poppins-Light.ttf");
+  src: url("Poppins-Light.ttf");
 }
 @font-face {
   font-family: "PoppinsRegular";
-  src: url("../fonts/Poppins-Regular.ttf");
+  src: url("Poppins-Regular.ttf");
 }
 @font-face {
   font-family: "PoppinsMedium";
-  src: url("../fonts/Poppins-Medium.ttf");
+  src: url("Poppins-Medium.ttf");
 }
 @font-face {
   font-family: "PoppinsSemiBold";
-  src: url("../fonts/Poppins-SemiBold.ttf");
+  src: url("Poppins-SemiBold.ttf");
 }
 @font-face {
   font-family: "PoppinsBold";
-  src: url("../fonts/Poppins-Bold.ttf");
+  src: url("Poppins-Bold.ttf");
 }
 .cardLittle {
   display: block;
