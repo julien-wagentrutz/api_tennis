@@ -15,7 +15,7 @@ main.register
   .block__left
   {
     min-width: 250px;
-    padding: 30px;
+    padding: 0 10%;
     box-sizing: border-box;
   h2
     {
@@ -107,13 +107,17 @@ main.register
 }
 
 @media screen and (min-width: 1071px){
+  .section--register
+  {
+    height: calc(100vh - 100px);
+  }
   .block__left
   {
-    width: 50%;
+    width: 65%;
   }
   .block__right
   {
-    width: 50%;
+    width: 35%;
     background-position: center;
   }
 }
