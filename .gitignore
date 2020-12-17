@@ -17,6 +17,7 @@
 
 .idea
 .DS_Store
+.env
 
 ###> symfony/webpack-encore-bundle ###
 /node_modules/

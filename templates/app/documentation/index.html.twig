@@ -15,224 +15,370 @@
                 <div class="item--doc active" id="infoDoc">
                     <h2 class="tittle--doc">1. Informations</h2>
                     <p class="text--doc">
-                Les routes accessibles depuis l'API. L'authentification à l'API  se fait via un Token créer à l'enregistrement de l'utilisateur, connexion via <span class="bold">AUTH_TOKEN</span> dans HEAD de la requête http. Les routes <span class="bold">DELETE</span>, <span class="bold">POST</span> et <span class="bold">PUT</span> sont accessibles uniquement par un utilisateur administrateur.
+                        Les routes accessibles depuis l'API. L'authentification à l'API  se fait via un Token créer à l'enregistrement de l'utilisateur, connexion via <span class="bold">AUTH_TOKEN</span> dans le <span class="bold">HEAD</span> de la requête http. Les routes <span class="bold">DELETE</span>, <span class="bold">POST</span> et <span class="bold">PUT</span> sont accessibles uniquement par un utilisateur administrateur.
                     </p>
                 </div>
                 <div class="item--doc" id="playerDoc">
                     <h2 class="tittle--doc">2. Player </h2>
                     <ul class="list--doc">
                         <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/players">https://tonnyapi.herokuapp.com/api/players</a></li>
                         <li class="item-list--doc">Code : </li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                            </ul>
+                        </li>
                         <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li class="item-list--doc">Retourne un objet Player</li>
                     </ul>
                     <ul class="list--doc">
                         <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Donne un joueur via son id, contenus dans l’API</li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/players/1">https://tonnyapi.herokuapp.com/api/players/1</a></li>
                         <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Retourne un objet Player</li>
                     </ul>
                     <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="title-list--doc">POST</li>
+                        <li class="item-list--doc">Créer un joueur <span>seulement si l'utilisateur est un administrateur</span> </li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/players">https://tonnyapi.herokuapp.com/api/players</a></li>
                         <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">201 => Created</li>
+                                <li class="item-list--doc">405 => Method Not Allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Param en POST json :</li>
+                        <li class="item-list--doc">Retourne un objet Player</li>
                     </ul>
                     <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="title-list--doc">PUT</li>
+                        <li class="item-list--doc">Modifie un joueur via son id <span>seulement si l'utilisateur est un administrateur</span></li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/players">https://tonnyapi.herokuapp.com/api/players/{id}</a></li>
                         <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">405 => Request not allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Param en POST json :</li>
+                        <li class="item-list--doc">Retourne un objet Player</li>
                     </ul>
                     <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="title-list--doc">DELETE</li>
+                        <li class="item-list--doc">Supprime un joueur via son id <span>seulement si l'utilisateur est un administrateur</span></li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/players">https://tonnyapi.herokuapp.com/api/players/{id}</a></li>
                         <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">204 => No content</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                                <li class="item-list--doc">405 => Method Not Allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Retourne rien</li>
                     </ul>
                 </div>
                 <div class="item--doc" id="tourneyDoc">
                     <h2 class="tittle--doc">3. Tourney</h2>
                     <ul class="list--doc">
                         <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Donne tout les tournois contenus dans l’API</li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/tourneys">https://tonnyapi.herokuapp.com/api/tourneys</a></li>
                         <li class="item-list--doc">Code : </li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                            </ul>
+                        </li>
                         <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li class="item-list--doc">Retourne un objet Tournois</li>
                     </ul>
                     <ul class="list--doc">
                         <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Donne un tournois via son id, contenus dans l’API</li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/tourneys/5">https://tonnyapi.herokuapp.com/api/tourneys/5</a></li>
                         <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Retourne un objet Tournois</li>
                     </ul>
                     <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="title-list--doc">POST</li>
+                        <li class="item-list--doc">Créer un tournois <span>seulement si l'utilisateur est un administrateur</span> </li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/tourneys">https://tonnyapi.herokuapp.com/api/tourneys</a></li>
                         <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">201 => Created</li>
+                                <li class="item-list--doc">405 => Method Not Allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Param en POST json :</li>
+                        <li class="item-list--doc">Retourne un objet Tournois</li>
                     </ul>
                     <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="title-list--doc">PUT</li>
+                        <li class="item-list--doc">Modifie un tournois via son id <span>seulement si l'utilisateur est un administrateur</span></li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/tourneys">https://tonnyapi.herokuapp.com/api/tourneys/{id}</a></li>
                         <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">405 => Request not allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Param en POST json :</li>
+                        <li class="item-list--doc">Retourne un objet Tournois</li>
                     </ul>
                     <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="title-list--doc">DELETE</li>
+                        <li class="item-list--doc">Supprime un tournois via son id <span>seulement si l'utilisateur est un administrateur</span></li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/tourneys">https://tonnyapi.herokuapp.com/api/tournois/{id}</a></li>
                         <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
-                    </ul>
-                </div>
-                <div class="item--doc" id="boardDoc">
-                    <h2 class="tittle--doc">4. Board</h2>
-                    <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
-                        <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
-                    </ul>
-                    <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
-                        <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
-                    </ul>
-                    <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
-                        <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
-                    </ul>
-                    <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
-                        <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
-                    </ul>
-                    <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
-                        <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
-                    </ul>
-                </div>
-                <div class="item--doc" id="matchDoc">
-                    <h2 class="tittle--doc">5. Match</h2>
-                    <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
-                        <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
-                    </ul>
-                    <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
-                        <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
-                    </ul>
-                    <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
-                        <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
-                    </ul>
-                    <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
-                        <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
-                    </ul>
-                    <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
-                        <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">204 => No content</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                                <li class="item-list--doc">405 => Method Not Allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Retourne rien</li>
                     </ul>
                 </div>
                 <div class="item--doc" id="tourneyPlayDoc">
-                    <h2 class="tittle--doc">6. Tourney Play</h2>
+                    <h2 class="tittle--doc">4. Tourney Play</h2>
                     <ul class="list--doc">
                         <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Donne tout les saisons contenus dans l’API</li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/tourneysPlay">https://tonnyapi.herokuapp.com/api/tourneysPlay</a></li>
                         <li class="item-list--doc">Code : </li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                            </ul>
+                        </li>
                         <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li class="item-list--doc">Retourne un objet Saison</li>
                     </ul>
                     <ul class="list--doc">
                         <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Donne une saison via son id, contenus dans l’API</li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/tourneysPlay/1">https://tonnyapi.herokuapp.com/api/tourneysPlay/1</a></li>
                         <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Retourne un objet Saison</li>
                     </ul>
                     <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="title-list--doc">POST</li>
+                        <li class="item-list--doc">Créer une saison <span>seulement si l'utilisateur est un administrateur</span> </li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/tourneysPlay">https://tonnyapi.herokuapp.com/api/tourneysPlay</a></li>
                         <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">201 => Created</li>
+                                <li class="item-list--doc">405 => Method Not Allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Param en POST json :</li>
+                        <li class="item-list--doc">Retourne un objet Saison</li>
                     </ul>
                     <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="title-list--doc">PUT</li>
+                        <li class="item-list--doc">Modifie une saison via son id <span>seulement si l'utilisateur est un administrateur</span></li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/tourneysPlay">https://tonnyapi.herokuapp.com/api/tourneysPlay/{id}</a></li>
                         <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">405 => Request not allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Param en POST json :</li>
+                        <li class="item-list--doc">Retourne un objet saison</li>
                     </ul>
                     <ul class="list--doc">
-                        <li class="title-list--doc">GET, HEAD </li>
-                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
-                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="title-list--doc">DELETE</li>
+                        <li class="item-list--doc">Supprime une saison via son id <span>seulement si l'utilisateur est un administrateur</span></li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/tourneysPlay">https://tonnyapi.herokuapp.com/api/playersPlay/{id}</a></li>
                         <li class="item-list--doc">Code : </li>
-                        <li class="item-list--doc">Param en GET :</li>
-                        <li class="item-list--doc">Propriétés disponibles :</li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">204 => No content</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                                <li class="item-list--doc">405 => Method Not Allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Retourne rien</li>
                     </ul>
                 </div>
+                <div class="item--doc" id="boardDoc">
+                    <h2 class="tittle--doc">5. Board</h2>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Donne tout les tableaux contenus dans l’API</li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/boards">https://tonnyapi.herokuapp.com/api/boards</a></li>
+                        <li class="item-list--doc">Code : </li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Retourne un objet tableau</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Donne un tableau via son id, contenus dans l’API</li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/boards/1">https://tonnyapi.herokuapp.com/api/boards/1</a></li>
+                        <li class="item-list--doc">Code : </li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Retourne un objet Tableau</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">POST</li>
+                        <li class="item-list--doc">Créer un tableau <span>seulement si l'utilisateur est un administrateur</span> </li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/boards">https://tonnyapi.herokuapp.com/api/boards</a></li>
+                        <li class="item-list--doc">Code : </li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">201 => Created</li>
+                                <li class="item-list--doc">405 => Method Not Allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Param en POST json :</li>
+                        <li class="item-list--doc">Retourne un objet Tableau</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">PUT</li>
+                        <li class="item-list--doc">Modifie un tableau via son id <span>seulement si l'utilisateur est un administrateur</span></li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/boards">https://tonnyapi.herokuapp.com/api/boards/{id}</a></li>
+                        <li class="item-list--doc">Code : </li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">405 => Request not allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Param en POST json :</li>
+                        <li class="item-list--doc">Retourne un objet Tableau</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">DELETE</li>
+                        <li class="item-list--doc">Supprime un tableau via son id <span>seulement si l'utilisateur est un administrateur</span></li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/boards">https://tonnyapi.herokuapp.com/api/boards/{id}</a></li>
+                        <li class="item-list--doc">Code : </li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">204 => No content</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                                <li class="item-list--doc">405 => Method Not Allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Retourne rien</li>
+                    </ul>
+                </div>
+                <div class="item--doc" id="matchDoc">
+                    <h2 class="tittle--doc">6. Match</h2>
+                    <ul class="list--doc">
+                    <li class="title-list--doc">GET, HEAD </li>
+                    <li class="item-list--doc">Donne tout les matchs contenus dans l’API</li>
+                    <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/matchs">https://tonnyapi.herokuapp.com/api/matchs</a></li>
+                    <li class="item-list--doc">Code : </li>
+                    <li>
+                        <ul class="list--doc intern">
+                            <li class="item-list--doc">200 => OK</li>
+                            <li class="item-list--doc">404 => No ressources</li>
+                        </ul>
+                    </li>
+                    <li class="item-list--doc">Param en GET :</li>
+                    <li class="item-list--doc">Retourne un objet Match</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Donne un matchs via son id, contenus dans l’API</li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/matchs/1">https://tonnyapi.herokuapp.com/api/matchs/1</a></li>
+                        <li class="item-list--doc">Code : </li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Retourne un objet Matchs</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">POST</li>
+                        <li class="item-list--doc">Créer un match <span>seulement si l'utilisateur est un administrateur</span> </li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/matchs">https://tonnyapi.herokuapp.com/api/matchs</a></li>
+                        <li class="item-list--doc">Code : </li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">201 => Created</li>
+                                <li class="item-list--doc">405 => Method Not Allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Param en POST json :</li>
+                        <li class="item-list--doc">Retourne un objet Match</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">PUT</li>
+                        <li class="item-list--doc">Modifie un match via son id <span>seulement si l'utilisateur est un administrateur</span></li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/matchs">https://tonnyapi.herokuapp.com/api/matchs/{id}</a></li>
+                        <li class="item-list--doc">Code : </li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">200 => OK</li>
+                                <li class="item-list--doc">405 => Request not allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Param en POST json :</li>
+                        <li class="item-list--doc">Retourne un objet Match</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">DELETE</li>
+                        <li class="item-list--doc">Supprime un match via son id <span>seulement si l'utilisateur est un administrateur</span></li>
+                        <li class="item-list--doc"><a target="_blank" href="https://tonnyapi.herokuapp.com/api/matchs">https://tonnyapi.herokuapp.com/api/matchs/{id}</a></li>
+                        <li class="item-list--doc">Code : </li>
+                        <li>
+                            <ul class="list--doc intern">
+                                <li class="item-list--doc">204 => No content</li>
+                                <li class="item-list--doc">404 => No ressources</li>
+                                <li class="item-list--doc">405 => Method Not Allowed</li>
+                            </ul>
+                        </li>
+                        <li class="item-list--doc">Retourne rien</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
     </main>

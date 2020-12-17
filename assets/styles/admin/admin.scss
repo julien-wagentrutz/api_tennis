@@ -50,6 +50,10 @@ main
           padding-right: 100px;
           box-sizing: border-box;
         }
+        .list--doc.intern
+        {
+          margin-bottom: 10px;
+        }
         .list--doc
         {
           padding-left: 57px;
@@ -67,6 +71,11 @@ main
             position: relative;
             padding-left: 26px;
             margin-bottom: 10px;
+            span
+            {
+              color: var(--color-green-100);
+              font-weight: bold;
+            }
           }
           .item-list--doc::before
           {
