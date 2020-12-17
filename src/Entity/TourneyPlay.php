@@ -78,13 +78,13 @@ class TourneyPlay
     /**
      * @ORM\ManyToOne(targetEntity=Tourney::class, inversedBy="tourneyPlays")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"read_player","read_match"})
+     * @Groups({"read_player","read_match","read_board"})
      */
     private $tourney;
 
     /**
      * @ORM\OneToMany(targetEntity=Board::class, mappedBy="tourneyPlay")
-     * @Groups({"read_tourney"})
+     * @Groups({"read_tourney", "read_tourneyPlay"})
      */
     private $boards;
 

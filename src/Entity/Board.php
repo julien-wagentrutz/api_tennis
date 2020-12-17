@@ -41,6 +41,7 @@ class Board
 
     /**
      * @ORM\OneToMany(targetEntity=MatchTennis::class, mappedBy="board")
+     * @Groups ({"read_tourney","read_board","read_tourneyPlay"})
      */
     private $matchTennis;
 
