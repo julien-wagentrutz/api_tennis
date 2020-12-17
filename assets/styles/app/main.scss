@@ -1,7 +1,8 @@
 @import "../fonts.scss";
 
-main
+.home
 {
+  overflow: hidden;
   h2
   {
     @include h2;
@@ -19,6 +20,8 @@ main
   {
     display: flex;
     flex-wrap: wrap;
+    height: calc(100vh - 100px);
+    margin-bottom: 0;
     .block--text
     {
       display: flex;
@@ -42,14 +45,17 @@ main
     .block-illu
     {
       min-width: 300px;
-      height: 400px;
-      background-color: #99C6CB;
+      background-image: url("../../images/home/Tennis_woman.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
   .section--joinUs
   {
     div
     {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -67,8 +73,72 @@ main
         width: 65%;
         max-width: 650px;
       }
-      a
+      .formAbs
       {
+        position: absolute;
+        padding: 0;
+        background-color: initial;
+      }
+      #form1
+      {
+        width: 83.74px;
+        height: 125.5px;
+        left: -50px;
+        top: -50px;
+        background-image: url("../../images/home/form1.svg");
+      }
+      #form2
+      {
+        width: 104.62px;
+        height: 90px;
+        right: -50px;
+        background-image: url("../../images/home/form2.svg");
+      }
+    }
+  }
+  .section--card-featues
+  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+    .card
+    {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      height: 400px;
+      min-width: 200px;
+      padding: 20px;
+      margin-top: 15px;
+      box-sizing: border-box;
+      background-color: var(--color-background);
+      box-shadow: var(--card-box-shadow);
+      border-radius: var(--card-border-radius);
+      p
+      {
+        @include text;
+        padding: 20px 0px;
+        span
+        {
+          color: var(--color-orange-100);
+        }
+      }
+      .block--illu
+      {
+        display: block;
+        height: 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      #feature1
+      {
+        background-image: url("../../images/home/features1.svg");
+      }
+      #feature2
+      {
+        background-image: url("../../images/home/feature2.svg");
       }
     }
   }
@@ -93,45 +163,111 @@ main
     flex-wrap: wrap;
     .card
     {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 480px;
-      height: 620px;
+      width: 380px;
+      height: 600px;
       margin-top: 50px;
       box-shadow: var(--card-box-shadow);
       border-radius: var(--card-border-radius);
       h3
       {
         @include h3;
-        margin-top: 48px;
+        font-size: 30px;
+        margin-top: 45px;
       }
       p
       {
         @include text;
-        margin-top: 20px;
-        margin-bottom: 65px;
+        font-size: 15px;
+        margin-top: 4px;
+        margin-bottom: 42px;
         color: var(--color-orange-100);
         .price
         {
           @include h3;
+          font-size: 30px;
         }
       }
       ul
       {
+        text-align: left;
         li
         {
           @include label;
+          position: relative;
+          display: flex;
+          align-content: baseline ;
           height: 27px;
-          margin-bottom: 30px;
+          margin-bottom: 18px;
+          font-size: 13px;
+          align-items: flex-end;
+          color: var(--color-black-100);
+          span
+          {
+            font-size: 20px;
+            color: var(--color-orange-100);
+            align-self: center;
+            margin-right: 5px;
+          }
+
         }
-        li:last-child
+        li::after
         {
-          margin-bottom: 70px;
-
+          content: '';
+          display: block;
+          position: absolute;
+          left: 9px;
+          bottom: 8px;
+          width: 10px;
+          height: 20px;
+          border-width: 0px 3px 3px 0px;
+          transform: rotate(45deg);
+          border-color: var(--color-orange-100);
+          border-style: solid;
+          border-radius: 2px;
         }
+        li::before
+        {
+          content: '';
+          display: block;
+          align-self: center;
+          height: 22px;
+          width: 22px;
+          margin-right: 15px;
+          background-color: var(--color-orange-20);
+          border-radius: var(--input-border-radius);
+        }
+        li:first-child
+        {
+          display: flex;
+          align-items: baseline;
+          div
+          {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            p
+            {
+              font-size: 13px;
+              color: var(--color-black-100);
+              margin: 0;
+            }
+            .special
+            {
+              color: var(--color-black-50);
+              font-size: 12px;
+            }
+          }
+        }
+      } 
+      a
+      {
+        position: absolute;
+        bottom: 45px;
       }
-
     }
   }
 }

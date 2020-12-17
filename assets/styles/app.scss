@@ -17,6 +17,21 @@ body
 main
 {
     width: 100%;
-    padding: 100px 75px;
     box-sizing: border-box;
+}
+
+@media screen and (min-width: 401px)
+{
+    main
+    {
+        padding: 100px 75px;
+    }
+}
+
+@media screen and (max-width: 400px)
+{
+    main
+    {
+        padding: 100px 15px;
+    }
 }
