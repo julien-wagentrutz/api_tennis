@@ -7,7 +7,7 @@
 {% endblock %}
 {% block body %}
     {{ parent() }}
-    <main>
+    <main class="home">
         <section class="section--welcome">
             <div class="block--text">
                 <h2>API</h2>
@@ -15,23 +15,25 @@
                     <span>Tonny</span> is an API for the tennis lovers.  Stay tuned  about all the tennis news with
                     the differents <span>Tonny</span> features.
                 </p>
-                <a class="btn-action" href="">Get started</a>
+                <a class="btn-action" href="{{ path('app_register') }}">Get started</a>
             </div>
             <div class="block-illu">
-
             </div>
         </section>
         <section class="section--features" id="features">
             <h2>Our features</h2>
             <div class="section--card-featues">
                 <div class="card">
-
+                    <div class="block--illu" id="feature1"></div>
+                    <p>
+                        <span>Customizable components</span> to show our data with simplicity
+                    </p>
                 </div>
                 <div class="card">
-
-                </div>
-                <div class="card">
-
+                    <div class="block--illu" id="feature2"></div>
+                    <p>
+                        A complete database with results and statistics from the <span>70s to the present day</span>
+                    </p>
                 </div>
             </div>
         </section>
@@ -39,7 +41,9 @@
             <div>
                 <h2>Join us to keep all the tennis news</h2>
                 <p>And became a entire member of the Tonny community. Exchange and share your passion all around you ! </p>
-                <a class="btn-action-reverse" href="">Get started</a>
+                <a class="btn-action-reverse" href="{{ path('app_register') }}">Get started</a>
+                <div class="formAbs" id="form1"></div>
+                <div class="formAbs" id="form2"></div>
             </div>
         </section>
         <section class="section--option" id="pricing">
@@ -50,25 +54,40 @@
             <div class="block--card">
                 <div class="card">
                     <h3>Tennis Lover</h3>
-                    <p><span class="price">12,95$</span> <span>/month</span></p>
+                    <p><span class="price">15,90$</span> <span>/month</span></p>
                     <ul>
-                        <li>Ça c’est cool</li>
-                        <li>Ça c’est cool</li>
-                        <li>Ça c’est cool</li>
-                        <li>Ça c’est cool</li>
+                        <li><span>2500 </span>
+                            <div>
+                                <p>requests / month</p>
+                                <p class="special">+ 0.005$ each</p>
+                            </div>
+                        </li>
+                        <li><span>60 </span>requests / per minutes</li>
+                        <li>Daily Matches</li>
+                        <li>Basic Tournaments Matches</li>
+                        <li>Tournaments</li>
+                        <li>Tour and Seasons</li>
+                        <li>Tour and Seasons Ranking</li>
                     </ul>
-                    <a class="btn-action" href="">Subscribe</a>
+                    <a class="btn-action" href="{{ path('app_register') }}">Subscribe</a>
                 </div>
                 <div class="card">
-                    <h3>Tennis Lover</h3>
-                    <p><span class="price">12,95$</span> <span>/month</span></p>
+                    <h3>Tennis addict</h3>
+                    <p><span class="price">29,90$</span> <span>/month</span></p>
                     <ul>
-                        <li>Ça c’est cool</li>
-                        <li>Ça c’est cool</li>
-                        <li>Ça c’est cool</li>
-                        <li>Ça c’est cool</li>
+                        <li><span>25000 </span>
+                            <div>
+                                <p>requests / month</p>
+                                <p class="special">+ 0.005$ each</p>
+                            </div>
+                        </li>
+                        <li><span>120 </span>requests / per minutes</li>
+                        <li>Tennis lover detail</li>
+                        <li>Detailed Tournaments Matches</li>
+                        <li>Match Detail</li>
+                        <li>Player Detail</li>
                     </ul>
-                    <a class="btn-action" href="">Subscribe</a>
+                    <a class="btn-action" href="{{ path('app_register') }}">Subscribe</a>
                 </div>
             </div>
         </section>

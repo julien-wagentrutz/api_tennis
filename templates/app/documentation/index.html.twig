@@ -1,0 +1,243 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tonny API{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('main') }}
+    {{ encore_entry_link_tags('admin') }}
+{% endblock %}
+{% block body %}
+    {{ parent() }}
+    <main>
+        {% include '/admin/includes/aside.html.twig'%}
+        <section class="section--doc">
+            <div class="block--doc" i>
+                <div class="item--doc active" id="infoDoc">
+                    <h2 class="tittle--doc">1. Informations</h2>
+                    <p class="text--doc">
+                Les routes accessibles depuis l'API. L'authentification à l'API  se fait via un Token créer à l'enregistrement de l'utilisateur, connexion via <span class="bold">AUTH_TOKEN</span> dans HEAD de la requête http. Les routes <span class="bold">DELETE</span>, <span class="bold">POST</span> et <span class="bold">PUT</span> sont accessibles uniquement par un utilisateur administrateur.
+                    </p>
+                </div>
+                <div class="item--doc" id="playerDoc">
+                    <h2 class="tittle--doc">2. Player </h2>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                </div>
+                <div class="item--doc" id="tourneyDoc">
+                    <h2 class="tittle--doc">3. Tourney</h2>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                </div>
+                <div class="item--doc" id="boardDoc">
+                    <h2 class="tittle--doc">4. Board</h2>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                </div>
+                <div class="item--doc" id="matchDoc">
+                    <h2 class="tittle--doc">5. Match</h2>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                </div>
+                <div class="item--doc" id="tourneyPlayDoc">
+                    <h2 class="tittle--doc">6. Tourney Play</h2>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                    <ul class="list--doc">
+                        <li class="title-list--doc">GET, HEAD </li>
+                        <li class="item-list--doc">Description =>Donne tous les joueurs contenus dans l’API</li>
+                        <li class="item-list--doc">Link =>/api/players</li>
+                        <li class="item-list--doc">Code : </li>
+                        <li class="item-list--doc">Param en GET :</li>
+                        <li class="item-list--doc">Propriétés disponibles :</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('admin') }}
+{% endblock %}

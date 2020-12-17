@@ -1,13 +1,12 @@
-<aside>
-    <div class="section--logo">
-        <a href=""></a>
-    </div>
+<aside class="admin--menu">
     <nav>
         <ul>
-            <li><a {% if aside == 'dashboard' %}class=" active "{% endif %} href="">Dashboard</a></li>
-            <li><a {% if aside == 'tourney' %}class=" active "{% endif %} href="{{ path('admin_tourneys') }}">Tournois</a></li>
-            <li><a {% if aside == 'player' %}class=" active "{% endif %} href="">Joueur</a></li>
-            <li><a {% if aside == 'user' %}class=" active "{% endif %} href="">Utilisateur</a></li>
+            <li><a class="active"  data-link="#infoDoc">1. Informations</a></li>
+            <li><a class=""  data-link="#playerDoc">2. Player </a></li>
+            <li><a class="" data-link="#tourneyDoc">3. Tourney</a></li>
+            <li><a class="" data-link="#boardDoc">4. Board</a></li>
+            <li><a class="" data-link="#matchDoc">5. Match</a></li>
+            <li><a class="" data-link="#tourneyPlayDoc">6. Tourney Play</a></li>
         </ul>
     </nav>
 </aside>

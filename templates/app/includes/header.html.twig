@@ -7,7 +7,7 @@
             <li><a {% if menu == 'home' %}class=" active "{% endif %} href="{{ path('app') }}">Home</a></li>
             <li><a  href="#features">Features</a></li>
             <li><a  href="#pricing">Pricing</a></li>
-            <li><a  href="">Documentation</a></li>
+            <li><a class="{% if menu == 'documentation' %} active{% endif %}"  href="{{ path('app_doc') }}">Documentation</a></li>
             {%  if  is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                 <li><a class="username{% if menu == 'user' %} active{% endif %}" href="">{{ app.user.name }}</a></li>
             {% else %}
