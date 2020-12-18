@@ -6,7 +6,7 @@ class Tonny {
             throw new Error('Missing api key')
         }
         this.apiKey = apiKey
-        this.apiUrl = "https://localhost:8000/api/"
+        this.apiUrl = "https://tonnyapi.herokuapp.com/api/"
     }
 
     /**
