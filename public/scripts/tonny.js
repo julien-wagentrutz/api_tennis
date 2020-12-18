@@ -79,6 +79,7 @@ class Tonny {
                 };
                 xhttp.open("GET", url, true);
                 xhttp.setRequestHeader("X-AUTH-TOKEN", apiKey);
+                xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                 xhttp.send();
             }
         )
